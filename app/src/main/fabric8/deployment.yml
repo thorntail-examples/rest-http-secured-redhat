@@ -8,3 +8,17 @@ spec:
               port: 8080
             initialDelaySeconds: 10
             periodSeconds: 5
+          env:
+            - name: SSO_REALM
+              valueFrom:
+                configMapKeyRef:
+                  name: sso-config
+                  key: sso.realm
+            - name: SSO_AUTH_SERVER_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: sso-config
+                  key: sso.auth-server-url
+              - name: JAVA_OPTIONS
+                  value: "-Dsso.realm=$(SSO_REALM) -Dsso.auth-server-url=$(SSO_AUTH_SERVER_URL)"
+

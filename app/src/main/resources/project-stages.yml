@@ -1,0 +1,4 @@
+swarm.keycloak.security.constraints:
+  - url-pattern: /greeting
+    methods: [GET]
+    roles: [admin]
