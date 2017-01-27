@@ -19,6 +19,6 @@ spec:
                 configMapKeyRef:
                   name: sso-config
                   key: sso.auth-server-url
-              - name: JAVA_OPTIONS
-                  value: "-Dsso.realm=$(SSO_REALM) -Dsso.auth-server-url=$(SSO_AUTH_SERVER_URL)"
+            - name: JAVA_OPTIONS
+              value: "-Dsso.realm=$(SSO_REALM) -Dsso.auth-server-url=$(SSO_AUTH_SERVER_URL)"
 

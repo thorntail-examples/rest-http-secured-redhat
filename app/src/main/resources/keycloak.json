@@ -1,8 +1,0 @@
-{
-  "realm": "${sso.realm}",
-  "realm-public-key": "${sso.realm-public-key}",
-  "auth-server-url": "${sso.auth-server-url}",
-  "ssl-required": "${sso.ssl-required}",
-  "resource": "${sso.resource}",
-  "public-client": ${sso.public-client}
-}

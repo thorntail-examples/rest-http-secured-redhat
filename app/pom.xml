@@ -30,7 +30,7 @@
   <version>1.0.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>rest</name>
+  <name>secured-rest</name>
   <description>Obsidian :: Quickstart :: WildflySwarm - Secured Rest</description>
 
   <properties>
@@ -141,11 +141,11 @@
     <developerConnection>scm:git:git@github.com:obsidian-toaster/.git</developerConnection>
     <url>http://github.com/obsidian-toaster/quick_rest_wildfly-swarm</url>
     <tag>HEAD</tag>
-    -->
+
     <connection>${obs.scm.git.connection}</connection>
     <developerConnection>${obs.scm.dev.connection}</developerConnection>
     <url>${obs.scm.url}</url>
-    <tag>${obs.scm.tag}</tag>
+    <tag>${obs.scm.tag}</tag> -->
   </scm>
 
 </project>
