@@ -19,7 +19,7 @@ After a successful login, the application will receive an `identity token` and a
 The identity token contains information about the user such as username, email, and other profile information.
 The access token is digitally signed by the realm and contains access information (like user role mappings).
 
-This `access token` is typically formatted as a JSON Token that the Spring Boot application will use with its Keycloak adapter to determine what resources it is allowed to access on the application.
+This `access token` is typically formatted as a JSON Token that the Swarm application will use with its Keycloak adapter to determine what resources it is allowed to access on the application.
 The configuration of the adapter is defined within the `app/src/main/resources/keycloak.json` file using these properties:
 
 ```
@@ -129,7 +129,7 @@ you must change the `SSO_AUTH_SERVER_URL` env variable assigned to the Deploymen
 
 # Access the service
 
-If the pod of the Secured Spring Boot application is running like the Red Hat SSO Server,
+If the pod of the Secured Swarm application is running like the Red Hat SSO Server,
 you can access it through the URL exposed through `oc get route/swarm-secured-rest`, i.e.
 
 
