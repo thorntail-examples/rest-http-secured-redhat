@@ -1,24 +1,66 @@
 # Introduction
 
-This project exposes a simple REST endpoint where the service greeting is available,
-but properly secured, at this address http://hostname:port/greeting and returns a json Greeting message after the application issuing the call to the REST endpoint has been granted to access the service.
+This project exposes a simple REST endpoint where the service `greeting` is available, but properly secured, at this address `http://hostname:port/greeting`
+and returns a json Greeting message after the application issuing the call to the REST endpoint has been granted to access the service.
 
 ```json
 {
     "content": "Hello, World!",
     "id": 1
 }
+```
+
+The id of the message is incremented for each request. To customize the message, you can pass as parameter the name of the person that you want to send your greeting.
+
+To manage the security, roles & permissions to access the service, a [Red Hat SSO](https://access.redhat.com/documentation/en/red-hat-single-sign-on/7.0/securing-applications-and-services-guide/securing-applications-and-services-guide) backend will be installed and configured for this project.
+It relies on the Keycloak project which implements the OpenId connect specification which is an extension of the Oauth2 protocol.
+
+After a successful login, the application will receive an `identity token` and an `access token`.
+The identity token contains information about the user such as username, email, and other profile information.
+The access token is digitally signed by the realm and contains access information (like user role mappings).
+
+This `access token` is typically formatted as a JSON Token that the Spring Boot application will use with its Keycloak adapter to determine what resources it is allowed to access on the application.
+The configuration of the adapter is defined within the `app/src/main/resources/keycloak.json` file using these properties:
+
+```
+{
+  "realm": "${sso.realm:realm}",
+  "realm-public-key": "${sso.realm-public-key:...}",
+  "auth-server-url": "${sso.auth-server-url:http://localhost:8180/auth}",
+  "client-id": "${sso.auth-server-url:http://localhost:8180/auth}",
+  "ssl-required": "external",
+  "resource": "${sso.clientId:demoapp}",
+  "credentials": {
+    "secret": "${sso.secret:...}"
+  },
+  "use-resource-role-mappings": false
+}
 
 ```
 
-The id of the message is incremented for each request. 
-To customize the message, you can pass as parameter the name of the person that you want to send your greeting.
+The security context is managed by Red Hat SSO using a realm (defined using the keycloak.realm property) where the adapter to establish a trusted TLS connection will use the Realm Public key defined using the `keycloak.realm-key` property.
+To access the server, the parameter `auth-server-url` is defined using the TLS address of the host followed with `/auth`.
+To manage different clients or applications, a resource has been created for the realm using the property `keycloak.resource`.
+This parameter, combined with the `keycloak.credentials.secret` property, will be used during the authentication phase to log in the application.
+If, it has been successfully granted, then a token will be issued that the application will use for the subsequent calls.
 
-You can perform this task in three different ways:
+The request that is issued to authenticate the application is:
 
-1. Build and launch using WildflySwarm.
-1. Build and deploy using OpenShift.
-1. Build, deploy, and authenticate using OpenShift Online.
+```
+https://<SSO_HOST>/auth/realms/<REALM>/protocol/openid-connect/token?client_secret=<SECRET>&grant_type=password&client_id=CLIENT_APP
+```
+
+And the HTTP requests accessing the endpoint/Service will include the following Bearer Token:
+
+```
+http://<SWARM_APP>/greeting -H "Authorization:Bearer <ACCESS_TOKEN>"
+```
+
+The project is split into two Apache Maven modules - `app` and `sso`.
+The `App` module exposes the REST Service using WildflySwarm.
+The `sso` module contains the OpenShift objects required to deploy the Red Hat SSO Server 7.0.
+
+The goal of this project is to deploy the quickstart in an OpenShift environment (online, dedicated, ...).
 
 # Prerequisites
 
@@ -27,9 +69,9 @@ To get started with these quickstarts you'll need the following prerequisites:
 Name | Description | Version
 --- | --- | ---
 [java][1] | Java JDK | 8
-[maven][2] | Apache Maven | 3.2.x 
+[maven][2] | Apache Maven | 3.2.x
 [oc][3] | OpenShift Client | v3.3.x
-[git][4] | Git version management | 2.x 
+[git][4] | Git version management | 2.x
 
 [1]: http://www.oracle.com/technetwork/java/javase/downloads/
 [2]: https://maven.apache.org/download.cgi?Preferred=ftp://mirror.reverse.net/pub/apache/
@@ -38,89 +80,63 @@ Name | Description | Version
 
 In order to build and deploy this project, you must have an account on an OpenShift Online (OSO): https://console.dev-preview-int.openshift.com/ instance.
 
-# Build the Project
-
-The project uses WildflySwarm to create and package the service.
-
-Execute the following maven command:
-
-```
-mvn clean install
-```
-
-# Launch and test
-
-1. Run the following command to start the maven goal of WildFlySwarm:
-
-    ```
-    mvn wildfly-swarm:run
-    ```
-
-1. If the application launched without error, use the following command to access the REST endpoint exposed using curl or httpie tool:
-
-    ```
-    http http://localhost:8080/greeting
-    curl http://localhost:8080/greeting
-    ```
-
-1. To pass a parameter for the Greeting Service, use the following HTTP request:
-
-    ```
-    http http://localhost:8080/greeting name==Charles
-    curl http://localhost:8080/greeting -d name=Bruno
-    ```
-
 # OpenShift Online
 
-1. Go to [OpenShift Online](https://console.dev-preview-int.openshift.com/console/command-line) to get the token used by the oc client for authentication and project access. 
+1. Using OpenShift Online or Dedicated, log on to the OpenShift Server.
 
-1. On the oc client, execute the following command to replace MYTOKEN with the one from the Web Console:
+    ```bash
+    oc login https://<OPENSHIFT_ADDRESS> --token=MYTOKEN` when you use OpenShift Online or Dedicated.
+    ```
+
+1. Create a new project on OpenShift.
+
+    ```bash
+    oc new-project <some_project_name>` and next build the quickstart
+    ```
+
+1. Build the quickstart.
 
     ```
-    oc login https://api.dev-preview-int.openshift.com --token=MYTOKEN
+    mvn clean install
     ```
-1. Use the Fabric8 Maven Plugin to launch the S2I process on the OpenShift Online machine & start the pod.
 
+# Deploy the Application
+
+1. To deploy the whole secured app, move to `sso` folder, and then use the Fabric8 Maven Plugin with the goals deploy and start:
+
+    ```bash
+    cd sso
+    mvn fabric8:deploy -Popenshift
     ```
-    mvn clean fabric8:deploy -Popenshift  -DskipTests
-    ```
+
+1. Open the OpenShift web console to see the status of the app and the exact routes used to access the app's greeting endpoint, 
+or to access the Red Hat SSO's admin console.
+
+    Note: until [CLOUD-1166](https://issues.jboss.org/browse/CLOUD-1166) is fixed,
+    we need to fix the redirect-uri in RH-SSO admin console, to point to our app's route.
     
-1. Get the route url.
-
+    To do that, acccess the Red Hat SSO Admin Console at `http://SSO_HOST/auth` and update the `demoapp` settings
     ```
-    oc get route/wildfly-swarm-rest
-    NAME              HOST/PORT                                          PATH      SERVICE                TERMINATION   LABELS
-    wildfly-swarm-rest   <HOST_PORT_ADDRESS>             wildfly-swarm-rest:8080
+    Clients > Demoapp > Settings > Valid Redirect URIs     
     ```
 
-1. Use the Host or Port address to access the REST endpoint.
+1. To specify the Red Hat SSO URL to be used by the Swarm application,
+you must change the `SSO_AUTH_SERVER_URL` env variable assigned to the DeploymentConfig object.
+
+    Note: You can retrieve the address of the SSO Server by issuing this command `oc get route/secure-sso` in a terminal and get the HOST/PORT name
+
     ```
-    http http://<HOST_PORT_ADDRESS>/greeting
-    http http://<HOST_PORT_ADDRESS>/greeting name==Bruno
-
-    or 
-
-    curl http://<HOST_PORT_ADDRESS>/greeting
-    curl http://<HOST_PORT_ADDRESS>/greeting -d name=Bruno
+    oc env dc/swarm-secured-rest SSO_AUTH_SERVER_URL=<URL>
     ```
 
-# Local Openshift Cluster 
- 
- Alterntively to the openshift online approach, you might run an [openshift cluster locally](https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md)
- 
- ```
- oc cluster up --version=v1.4.0-rc1
- [...]
- OpenShift server started.
-   The server is accessible via web console at:
-       https://<HOST_PORT_ADDRESS>:8443
+# Access the service
 
-   You are logged in as:
-       User:     developer
-       Password: developer
+If the pod of the Secured Spring Boot application is running like the Red Hat SSO Server,
+you can access it through the URL exposed through `oc get route/swarm-secured-rest`, i.e.
 
-   To login as administrator:
-       oc login -u system:admin
- ```
- 
- 
+
+```
+http://swarm-secured-rest-obsidian.e8ca.engint.openshiftapps.com/greeting
+```
+
+
