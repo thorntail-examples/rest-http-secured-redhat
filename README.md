@@ -133,11 +133,28 @@ or to access the Red Hat SSO's admin console.
 
 # Access the service
 
+## Browser based access
+
+Find out the route to the rest endpoint
+```
+oc get route swarm-secured-rest
+swarm-secured-rest   <HOST_PORT>             swarm-secured-rest   8080   
+```
+
+Pointing your browser to <HOST_PORT> should redirect to Red Hat SSO for authentication. 
+You can login with `admin:admin` and Red Hat SSO redirects you the REst endpoint. If everything works well you should receive a JSON response:
+   
+```
+{"id":2,"content":"Hello World"}   
+```
+
+## Manually requesting a bearer token
+
 If the pod of the Secured Swarm application is running like the Red Hat SSO Server,
 you can access it by requesting a bearer token upfront. The supplied shell scripts demonstrate this:
 
 
-```
+```bash
 cd scripts
 . set_env_vars.sh 
 
