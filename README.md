@@ -25,15 +25,13 @@ The configuration of the adapter is defined within the `app/src/main/resources/k
 ```
 {
   "realm": "${sso.realm:realm}",
-  "realm-public-key": "${sso.realm-public-key:...}",
-  "auth-server-url": "${sso.auth-server-url:http://localhost:8180/auth}",
-  "client-id": "${sso.auth-server-url:http://localhost:8180/auth}",
-  "ssl-required": "external",
   "resource": "${sso.clientId:demoapp}",
+  "realm-public-key": "${sso.realm-public-key:...}",
+  "auth-server-url": "${sso.auth-server-url:http://localhost:8180/auth}",  
+  "ssl-required": "external",  
   "credentials": {
     "secret": "${sso.secret:...}"
-  },
-  "use-resource-role-mappings": false
+  }  
 }
 
 ```
