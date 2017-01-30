@@ -92,13 +92,13 @@ In order to build and deploy this project, you must have an account on an OpenSh
     oc login https://<OPENSHIFT_ADDRESS> --token=MYTOKEN` when you use OpenShift Online or Dedicated.
     ```
 
-1. Create a new project on OpenShift.
+2. Create a new project on OpenShift.
 
     ```bash
     oc new-project <some_project_name>` and next build the quickstart
     ```
 
-1. Build the quickstart.
+3. Build the quickstart.
 
     ```
     mvn clean install
@@ -106,14 +106,21 @@ In order to build and deploy this project, you must have an account on an OpenSh
 
 # Deploy the Application
 
-1. To deploy the whole secured app, move to `sso` folder, and then use the Fabric8 Maven Plugin with the goals deploy and start:
+1. To deploy Red Hat SSO move to `sso` folder, and then use the Fabric8 Maven Plugin with the goals deploy and start:
 
     ```bash
     cd sso
     mvn fabric8:deploy -Popenshift
     ```
 
-1. Open the OpenShift web console to see the status of the app and the exact routes used to access the app's greeting endpoint, 
+2. Once the Red Hat SSO ods are ready, deploy the secured app, move to `app` folder, and then use the Fabric8 Maven Plugin with the goals deploy and start:
+
+    ```bash
+    cd app
+    mvn fabric8:deploy -Popenshift
+    ```
+
+3. Open the OpenShift web console to see the status of the app and the exact routes used to access the app's greeting endpoint, 
 or to access the Red Hat SSO's admin console.
 
     Note: until [CLOUD-1166](https://issues.jboss.org/browse/CLOUD-1166) is fixed,
