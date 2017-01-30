@@ -1,6 +1,6 @@
 # Introduction
 
-# Basic Functionality
+## Basic Functionality
 
 This project exposes a simple REST endpoint where the service `greeting` is available, but properly secured, at this address `http://hostname:port/greeting`
 and returns a json Greeting message after the application issuing the call to the REST endpoint has been granted to access the service.
@@ -14,7 +14,7 @@ and returns a json Greeting message after the application issuing the call to th
 
 The id of the message is incremented for each request. To customize the message, you can pass as parameter the name of the person that you want to send your greeting.
 
-# Security Constraints
+## Security Constraints
 
 To manage the security, roles & permissions to access the service, a [Red Hat SSO](https://access.redhat.com/documentation/en/red-hat-single-sign-on/7.0/securing-applications-and-services-guide/securing-applications-and-services-guide) backend will be installed and configured for this project.
 It relies on the Keycloak project which implements the OpenId connect specification which is an extension of the Oauth2 protocol.
@@ -40,7 +40,7 @@ The configuration of the adapter is defined within the `app/src/main/resources/k
 
 ```
 
-# Red Hat SSO
+## Red Hat SSO
 
 The security context is managed by Red Hat SSO using a realm (defined using the keycloak.realm property) where the adapter to establish a trusted TLS connection will use the Realm Public key defined using the `keycloak.realm-key` property.
 To access the server, the parameter `auth-server-url` is defined using the TLS address of the host followed with `/auth`.
