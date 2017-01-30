@@ -95,7 +95,7 @@ In order to build and deploy this project, you must have an account on an OpenSh
 2. Create a new project on OpenShift.
 
     ```bash
-    oc new-project <some_project_name>` and next build the quickstart
+    oc new-project <PROJECT_NAME>` and next build the quickstart
     ```
 
 3. Build the quickstart.
@@ -110,14 +110,14 @@ In order to build and deploy this project, you must have an account on an OpenSh
 
     ```bash
     cd sso
-    mvn fabric8:deploy -Popenshift
+    mvn -Dfabric8.namespace=<PROJECT_NAME> fabric8:deploy -Popenshift
     ```
 
 2. Once the Red Hat SSO ods are ready, deploy the secured app, move to `app` folder, and then use the Fabric8 Maven Plugin with the goals deploy and start:
 
     ```bash
     cd app
-    mvn fabric8:deploy -Popenshift
+    mvn -Dfabric8.namespace=<PROJECT_NAME> fabric8:deploy -Popenshift
     ```
 
 3. Open the OpenShift web console to see the status of the app and the exact routes used to access the app's greeting endpoint, 
@@ -131,23 +131,20 @@ or to access the Red Hat SSO's admin console.
     Clients > Demoapp > Settings > Valid Redirect URIs     
     ```
 
-1. To specify the Red Hat SSO URL to be used by the Swarm application,
-you must change the `SSO_AUTH_SERVER_URL` env variable assigned to the DeploymentConfig object.
-
-    Note: You can retrieve the address of the SSO Server by issuing this command `oc get route/secure-sso` in a terminal and get the HOST/PORT name
-
-    ```
-    oc env dc/swarm-secured-rest SSO_AUTH_SERVER_URL=<URL>
-    ```
-
 # Access the service
 
 If the pod of the Secured Swarm application is running like the Red Hat SSO Server,
-you can access it through the URL exposed through `oc get route/swarm-secured-rest`, i.e.
+you can access it by requesting a bearer token upfront. The supplied shell scripts demonstrate this:
 
 
 ```
-http://swarm-secured-rest-obsidian.e8ca.engint.openshiftapps.com/greeting
+cd scripts
+. set_env_vars.sh 
+
+./token_req.sh 
+
+{"id":2,"content":"Hello World"}
+
 ```
 
 
