@@ -23,7 +23,7 @@ After a successful login, the application will receive an `identity token` and a
 The identity token contains information about the user such as username, email, and other profile information.
 The access token is digitally signed by the realm and contains access information (like user role mappings).
 
-This `access token` is typically formatted as a JSON Token that the Swarm application will use with its Keycloak adapter to determine what resources it is allowed to access on the application.
+This `access token` is typically formatted as a JSON Token that the WildflySwarm application will use with its Keycloak adapter to determine what resources it is allowed to access on the application.
 The configuration of the adapter is defined within the `app/src/main/resources/keycloak.json` file using these properties:
 
 ```
@@ -42,10 +42,10 @@ The configuration of the adapter is defined within the `app/src/main/resources/k
 
 ## Red Hat SSO
 
-The security context is managed by Red Hat SSO using a realm (defined using the keycloak.realm property) where the adapter to establish a trusted TLS connection will use the Realm Public key defined using the `keycloak.realm-key` property.
-To access the server, the parameter `auth-server-url` is defined using the TLS address of the host followed with `/auth`.
-To manage different clients or applications, a resource has been created for the realm using the property `keycloak.resource`.
-This parameter, combined with the `keycloak.credentials.secret` property, will be used during the authentication phase to log in the application.
+The security context is managed by Red Hat SSO using a realm (defined using the sso.realm property) where the adapter to establish a trusted TLS connection will use the Realm Public key defined using the `keycloak.realm-key` property.
+To access the server, the parameter `sso.auth-server-url` is defined using the TLS address of the host followed with `/auth`.
+To manage different clients or applications, a resource has been created for the realm using the property `sso.clientId`.
+This parameter, combined with the `credentials.secret` property, will be used during the authentication phase to log in the application.
 If, it has been successfully granted, then a token will be issued that the application will use for the subsequent calls.
 
 The request that is issued to authenticate the application is:
@@ -113,7 +113,7 @@ In order to build and deploy this project, you must have an account on an OpenSh
     mvn -Dfabric8.namespace=<PROJECT_NAME> fabric8:deploy -Popenshift
     ```
 
-2. Once the Red Hat SSO ods are ready, deploy the secured app, move to `app` folder, and then use the Fabric8 Maven Plugin with the goals deploy and start:
+2. Once the Red Hat SSO pods are ready, deploy the secured app, move to `app` folder, and then use the Fabric8 Maven Plugin with the goals deploy and start:
 
     ```bash
     cd app
@@ -150,7 +150,7 @@ You can login with `admin:admin` and Red Hat SSO redirects you the REst endpoint
 
 ## Manually requesting a bearer token
 
-If the pod of the Secured Swarm application is running like the Red Hat SSO Server,
+If the pod of the Secured WildflySwarm application is running like the Red Hat SSO Server,
 you can access it by requesting a bearer token upfront. The supplied shell scripts demonstrate this:
 
 
