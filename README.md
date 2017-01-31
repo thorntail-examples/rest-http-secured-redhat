@@ -123,6 +123,14 @@ or to access the Red Hat SSO's admin console.
     ```
     Clients > Demoapp > Settings > Valid Redirect URIs     
     ```
+3. To specify the Red Hat SSO URL to be used by the WildFly Swarm application,
+you must change the SSO_URL env variable assigned to the DeploymentConfig object.
+
+    Note: You can retrieve the address of the SSO Server by issuing this command `oc get route/secure-sso` in a terminal and get the HOST/PORT name
+
+    ```
+    oc env dc/secured-swarm-rest SSO_URL=https://secure-sso-sso.e8ca.engint.openshiftapps.com
+    ```    
 
 # Access the service
 
