@@ -11,13 +11,7 @@ spec:
   template:
     spec:
       containers:
-        - readinessProbe:
-            httpGet:
-              path: /health
-              port: 8080
-            initialDelaySeconds: 10
-            periodSeconds: 5
-          env:
+        - env:
             - name: KUBERNETES_NAMESPACE
               valueFrom:
                 fieldRef:
@@ -36,4 +30,25 @@ spec:
               value: ${SECRET}
             - name: JAVA_OPTIONS
               value: -Dsso.realm=$(SSO_REALM) -Dsso.auth-server-url=$(SSO_AUTH_SERVER_URL)
-
+        image: secured-swarm-rest:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 5
+  triggers:
+  - type: ConfigChange
+  - imageChangeParams:
+      automatic: true
+      containerNames:
+      - secured-swarm-rest
+      from:
+        kind: ImageStreamTag
+        name: secured-swarm-rest:latest
+    type: ImageChange
