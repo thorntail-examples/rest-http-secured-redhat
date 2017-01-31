@@ -9,10 +9,22 @@ spec:
             initialDelaySeconds: 10
             periodSeconds: 5
           env:
-            - name: POD_NAMESPACE
+            - name: KUBERNETES_NAMESPACE
               valueFrom:
                 fieldRef:
-                  fieldPath: "metadata.namespace"
+                  fieldPath: metadata.namespace
+            - name: JAVA_APP_DIR
+              value: /deployments
+            - name: SSO_URL
+              value: ${SSO_URL}/auth
+            - name: REALM
+              value: ${REALM}
+            - name: REALM_PUBLIC_KEY
+              value: ${REALM_PUBLIC_KEY}
+            - name: CLIENT_ID
+              value: ${CLIENT_ID}
+            - name: SECRET
+              value: ${SECRET}
             - name: SSO_REALM
               valueFrom:
                 configMapKeyRef:
