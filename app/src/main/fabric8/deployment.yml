@@ -28,8 +28,6 @@ spec:
           value: ${SSO_CLIENT_ID}
         - name: SSO_SECRET
           value: ${SSO_SECRET}
-        - name: JAVA_OPTIONS
-          value: -Dsso.realm=${SSO_REALM} -Dsso.auth.server.url=${SSO_AUTH_SERVER_URL}
         name: secured-swarm-rest
         image: secured-swarm-rest:latest
         imagePullPolicy: IfNotPresent
