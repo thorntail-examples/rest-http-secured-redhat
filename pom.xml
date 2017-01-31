@@ -99,6 +99,14 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <!-- This -->
+            <dependency>
+                <groupId>org.obsidiantoaster.quickstart</groupId>
+                <artifactId>secured-swarm-rest</artifactId>
+                <version>${project.version}</version>
+                <type>war</type>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>

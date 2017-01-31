@@ -30,12 +30,13 @@
     <artifactId>secured-swarm-rest-build</artifactId>
 
     <name>sso</name>
-    <description>Obsidian :: Quickstart :: Secured Swarm - Rest [Build]</description>
+    <description>Obsidian :: Quickstart :: Secured WildFly Swarm - Rest [Build]</description>
 
     <dependencies>
         <dependency>
             <groupId>org.obsidiantoaster.quickstart</groupId>
-            <artifactId>swarm-secured-rest</artifactId>
+            <artifactId>secured-swarm-rest</artifactId>
+            <type>war</type>
         </dependency>
     </dependencies>
 
@@ -64,7 +65,7 @@
                        <dependencies>
                             <dependency>
                                 <groupId>org.obsidiantoaster.quickstart</groupId>
-                                <artifactId>swarm-secured-rest</artifactId>
+                                <artifactId>secured-swarm-rest</artifactId>
                                 <version>${project.version}</version>
                             </dependency>
                         </dependencies>

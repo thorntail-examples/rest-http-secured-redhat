@@ -26,12 +26,12 @@
   </parent>
 
   <groupId>org.obsidiantoaster.quickstart</groupId>
-  <artifactId>swarm-secured-rest</artifactId>
+  <artifactId>secured-swarm-rest</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>secured-rest</name>
-  <description>Obsidian :: Quickstart :: WildflySwarm - Secured Rest</description>
+  <name>secured-swarm-rest</name>
+  <description>Obsidian :: Quickstart :: Secured Wildfly Swarm - Rest</description>
 
   <properties>
     <failOnMissingWebXml>false</failOnMissingWebXml>
