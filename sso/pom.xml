@@ -67,6 +67,7 @@
                                 <groupId>org.obsidiantoaster.quickstart</groupId>
                                 <artifactId>secured-swarm-rest</artifactId>
                                 <version>${project.version}</version>
+                                <type>war</type>
                             </dependency>
                         </dependencies>
                     </plugin>
