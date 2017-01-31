@@ -22,8 +22,8 @@ spec:
           value: ${SSO_AUTH_SERVER_URL}/auth
         - name: SSO_REALM
           value: ${SSO_REALM}
-        - name: SSO_REALM-PUBLIC-KEY
-          value: ${SSO_REALM-PUBLIC-KEY}
+        - name: SSO_REALM_PUBLIC_KEY
+          value: ${SSO_REALM_PUBLIC_KEY}
         - name: SSO_CLIENT_ID
           value: ${SSO_CLIENT_ID}
         - name: SSO_SECRET
