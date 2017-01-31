@@ -17,26 +17,14 @@ spec:
               value: /deployments
             - name: SSO_URL
               value: ${SSO_URL}/auth
-            - name: REALM
-              value: ${REALM}
-            - name: REALM_PUBLIC_KEY
-              value: ${REALM_PUBLIC_KEY}
-            - name: CLIENT_ID
-              value: ${CLIENT_ID}
-            - name: SECRET
-              value: ${SECRET}
             - name: SSO_REALM
-              valueFrom:
-                configMapKeyRef:
-                  name: sso-config
-                  namespace: ${fabric8.namespace}
-                  key: sso.realm
-            - name: SSO_AUTH_SERVER_URL
-              valueFrom:
-                configMapKeyRef:
-                  name: sso-config
-                  namespace: ${fabric8.namespace}
-                  key: sso.auth-server-url
+              value: ${REALM}
+            - name: SSO_REALM_PUBLIC_KEY
+              value: ${REALM_PUBLIC_KEY}
+            - name: SSO_CLIENT_ID
+              value: ${CLIENT_ID}
+            - name: SSO_SECRET
+              value: ${SECRET}
             - name: JAVA_OPTIONS
               value: -Dsso.realm=$(SSO_REALM) -Dsso.auth-server-url=$(SSO_AUTH_SERVER_URL)
 
