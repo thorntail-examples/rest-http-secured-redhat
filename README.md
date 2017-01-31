@@ -110,7 +110,7 @@ In order to build and deploy this project, you must have an account on an OpenSh
 
     ```bash
     cd sso
-    mvn -Dfabric8.namespace=<PROJECT_NAME> fabric8:deploy -Popenshift
+    mvn fabric8:deploy -Popenshift
     ```
 
 2. Open the OpenShift web console to see the status of the app and the exact routes used to access the app's greeting endpoint, 
