@@ -98,13 +98,15 @@ In order to build and deploy this project, you must have an account on an OpenSh
     oc new-project <PROJECT_NAME>` and next build the quickstart
     ```
 
-3. Build the quickstart.
+# Buld and deploy the Application
+
+1. First, the WildFly Swarm application should be packaged and deployed. This process will generate the uber jar file, the OpenShift resources 
+   and deploy them within the namespace of the OpenShift Server
 
     ```
-    mvn clean install -Popenshift
+    cd app
+    mvn fabric8:deploy -Popenshift
     ```
-
-# Deploy the Application
 
 1. To deploy Red Hat SSO move to `sso` folder, and then use the Fabric8 Maven Plugin with the goals deploy and start:
 
@@ -113,7 +115,7 @@ In order to build and deploy this project, you must have an account on an OpenSh
     mvn fabric8:deploy -Popenshift
     ```
 
-2. Open the OpenShift web console to see the status of the app and the exact routes used to access the app's greeting endpoint, 
+1. Open the OpenShift web console to see the status of the app and the exact routes used to access the app's greeting endpoint, 
 or to access the Red Hat SSO's admin console.
 
     Note: until [CLOUD-1166](https://issues.jboss.org/browse/CLOUD-1166) is fixed,
@@ -123,7 +125,7 @@ or to access the Red Hat SSO's admin console.
     ```
     Clients > Demoapp > Settings > Valid Redirect URIs     
     ```
-3. To specify the Red Hat SSO URL to be used by the WildFly Swarm application,
+1. To specify the Red Hat SSO URL to be used by the WildFly Swarm application,
 you must change the SSO_URL env variable assigned to the DeploymentConfig object.
 
     Note: You can retrieve the address of the SSO Server by issuing this command `oc get route/secure-sso` in a terminal and get the HOST/PORT name
