@@ -101,7 +101,7 @@ In order to build and deploy this project, you must have an account on an OpenSh
 3. Build the quickstart.
 
     ```
-    mvn clean install
+    mvn clean install -Popenshift
     ```
 
 # Deploy the Application
@@ -113,14 +113,7 @@ In order to build and deploy this project, you must have an account on an OpenSh
     mvn -Dfabric8.namespace=<PROJECT_NAME> fabric8:deploy -Popenshift
     ```
 
-2. Once the Red Hat SSO pods are ready, deploy the secured app, move to `app` folder, and then use the Fabric8 Maven Plugin with the goals deploy and start:
-
-    ```bash
-    cd app
-    mvn -Dfabric8.namespace=<PROJECT_NAME> fabric8:deploy -Popenshift
-    ```
-
-3. Open the OpenShift web console to see the status of the app and the exact routes used to access the app's greeting endpoint, 
+2. Open the OpenShift web console to see the status of the app and the exact routes used to access the app's greeting endpoint, 
 or to access the Red Hat SSO's admin console.
 
     Note: until [CLOUD-1166](https://issues.jboss.org/browse/CLOUD-1166) is fixed,
@@ -150,7 +143,7 @@ You can login with `admin:admin` and Red Hat SSO redirects you the REst endpoint
 
 ## Manually requesting a bearer token
 
-If the pod of the Secured WildflySwarm application is running like the Red Hat SSO Server,
+If the pod of the Secured Wildfly Swarm application is running like the Red Hat SSO Server,
 you can access it by requesting a bearer token upfront. The supplied shell scripts demonstrate this:
 
 
