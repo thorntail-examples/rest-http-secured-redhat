@@ -1,4 +1,13 @@
+apiVersion: v1
+kind: DeploymentConfig
+metadata:
+  name: ${project.artifactId}
 spec:
+  replicas: 1
+  strategy:
+    rollingParams:
+      timeoutSeconds: 10800
+    type: Rolling
   template:
     spec:
       containers:
