@@ -138,8 +138,8 @@ you must change the SSO_URL env variable assigned to the DeploymentConfig object
 
 Find out the route to the rest endpoint
 ```
-oc get route swarm-secured-rest
-swarm-secured-rest   <HOST_PORT>             swarm-secured-rest   8080   
+oc get route secured-swarm-rest
+secured-swarm-rest   <HOST_PORT>             secured-swarm-rest   8080   
 ```
 
 Pointing your browser to `HOST_PORT` should redirect to Red Hat SSO for authentication. 
