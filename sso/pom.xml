@@ -36,7 +36,6 @@
         <dependency>
             <groupId>org.obsidiantoaster.quickstart</groupId>
             <artifactId>secured-swarm-rest</artifactId>
-            <type>war</type>
         </dependency>
     </dependencies>
 
