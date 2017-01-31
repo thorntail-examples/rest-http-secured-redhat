@@ -18,8 +18,8 @@ spec:
               fieldPath: metadata.namespace
         - name: JAVA_APP_DIR
           value: /deployments
-        - name: SSO_AUTH-SERVER-URL
-          value: ${SSO_AUTH-SERVER-URL}/auth
+        - name: SSO_AUTH_SERVER_URL
+          value: ${SSO_AUTH_SERVER_URL}/auth
         - name: SSO_REALM
           value: ${SSO_REALM}
         - name: SSO_REALM-PUBLIC-KEY
@@ -28,8 +28,6 @@ spec:
           value: ${SSO_CLIENT_ID}
         - name: SSO_SECRET
           value: ${SSO_SECRET}
-        - name: JAVA_OPTIONS
-          value: -Dsso.realm=$(SSO_REALM) -Dsso.auth-server-url=$(SSO_AUTH-SERVER-URL)
         name: secured-swarm-rest
         image: secured-swarm-rest:latest
         imagePullPolicy: IfNotPresent
