@@ -42,7 +42,7 @@ The configuration of the adapter is defined within the `app/src/main/resources/k
 
 ## Red Hat SSO
 
-The security context is managed by Red Hat SSO using a realm (defined using the sso.realm property) where the adapter to establish a trusted TLS connection will use the Realm Public key defined using the `keycloak.realm-key` property.
+The security context is managed by Red Hat SSO using a realm (defined using the `sso.realm` property) where the adapter to establish a trusted TLS connection will use the Realm Public key defined using the `sso.realm-public-key` property.
 To access the server, the parameter `sso.auth-server-url` is defined using the TLS address of the host followed with `/auth`.
 To manage different clients or applications, a resource has been created for the realm using the property `sso.clientId`.
 This parameter, combined with the `credentials.secret` property, will be used during the authentication phase to log in the application.
@@ -51,13 +51,13 @@ If, it has been successfully granted, then a token will be issued that the appli
 The request that is issued to authenticate the application is:
 
 ```
-https://<SSO_HOST>/auth/realms/<REALM>/protocol/openid-connect/token?client_secret=<SECRET>&grant_type=password&client_id=CLIENT_APP
+https://<RED_HAT_SSO>/auth/realms/<REALM>/protocol/openid-connect/token?client_secret=<SECRET>&grant_type=password&client_id=CLIENT_APP
 ```
 
 And the HTTP requests accessing the endpoint/Service will include the following Bearer Token:
 
 ```
-http://<SWARM_APP>/greeting -H "Authorization:Bearer <ACCESS_TOKEN>"
+http://<SWARM_SERVICE>/greeting -H "Authorization:Bearer <ACCESS_TOKEN>"
 ```
 
 The project is split into two Apache Maven modules - `app` and `sso`.
@@ -89,18 +89,25 @@ In order to build and deploy this project, you must have an account on an OpenSh
 1. Using OpenShift Online or Dedicated, log on to the OpenShift Server.
 
     ```bash
-    oc login https://<OPENSHIFT_ADDRESS> --token=MYTOKEN` when you use OpenShift Online or Dedicated.
+    oc login https://<OPENSHIFT_ADDRESS> --token=MYTOKEN
     ```
 
 2. Create a new project on OpenShift.
 
     ```bash
-    oc new-project <PROJECT_NAME>` and next build the quickstart
+    oc new-project <PROJECT_NAME>
     ```
 
-# Buld and deploy the Application
+# Build and deploy the Application
 
-1. First, the WildFly Swarm application should be packaged and deployed. This process will generate the uber jar file, the OpenShift resources 
+1. First, to deploy Red Hat SSO move to `sso` folder, and then use the Fabric8 Maven Plugin to deploy the SSO service:
+
+    ```bash
+    cd sso
+    mvn fabric8:deploy -Popenshift
+    ```
+
+2. Next, the WildFly Swarm application should be packaged and deployed. This process will generate the uber jar file, the OpenShift resources
    and deploy them within the namespace of the OpenShift Server
 
     ```
@@ -108,63 +115,41 @@ In order to build and deploy this project, you must have an account on an OpenSh
     mvn fabric8:deploy -Popenshift
     ```
 
-1. To deploy Red Hat SSO move to `sso` folder, and then use the Fabric8 Maven Plugin with the goals deploy and start:
+3. Make yourself familiar with the routes to the Red Hat SSO server and the WildflySwarm server. We will refer to these two addresses as `<RED_HAT_SSO>` and `<SWARM_SERVICE>` respectively.
 
-    ```bash
-    cd sso
-    mvn fabric8:deploy -Popenshift
+  You can do this using the OpenShift web console or using the command line:
+
+  ```
+  oc get routes
+
+  NAME                 HOST/PORT                                                 PATH      SERVICES             PORT      TERMINATION
+secure-sso           <RED_HAT_SSO>                     secure-sso           <all>     passthrough
+secured-swarm-rest   <SWARM_SERVICE>             secured-swarm-rest   8080      
+  ```
+
+4. Until [CLOUD-1166](https://issues.jboss.org/browse/CLOUD-1166) is fixed, we need to fix the redirect-uri in RH-SSO admin console, to point to our app's route (`<SWARM_SERVICE>` above).
+
+  To do that, acccess the Red Hat SSO Admin Console at `http://<RED_HAT_SSO>/auth`, login with `admin:admin` and update the `demoapp` settings to allow redirects from `http://<SWARM_SERVICE>/*`:
+
+  ```
+  Clients > Demoapp > Settings > Valid Redirect URIs     
+  ```
+
+5. To specify the Red Hat SSO URL to be used by the WildFly Swarm application for authentication,
+you must change the `SSO_AUTH_SERVER_URL` env variable for the pods to the `<RED_HAT_SSO>` value identified before:
+
     ```
+    oc env dc/secured-swarm-rest SSO_AUTH_SERVER_URL=https://<RED_HAT_SSO>/auth
 
-1. Open the OpenShift web console to see the status of the app and the exact routes used to access the app's greeting endpoint, 
-or to access the Red Hat SSO's admin console.
-
-    Note: until [CLOUD-1166](https://issues.jboss.org/browse/CLOUD-1166) is fixed,
-    we need to fix the redirect-uri in RH-SSO admin console, to point to our app's route.
-    
-    To do that, acccess the Red Hat SSO Admin Console at `http://SSO_HOST/auth` and update the `demoapp` settings
-    ```
-    Clients > Demoapp > Settings > Valid Redirect URIs     
-    ```
-1. To specify the Red Hat SSO URL to be used by the WildFly Swarm application,
-you must change the SSO_URL env variable assigned to the DeploymentConfig object.
-
-    Note: You can retrieve the address of the SSO Server by issuing this command `oc get route/secure-sso` in a terminal and get the HOST/PORT name
-
-    ```
-    oc env dc/secured-swarm-rest SSO_URL=https://secure-sso-sso.e8ca.engint.openshiftapps.com/auth
     ```    
 
 # Access the service
 
 ## Browser based access
 
-Find out the route to the rest endpoint
-```
-oc get route secured-swarm-rest
-secured-swarm-rest   <HOST_PORT>             secured-swarm-rest   8080   
-```
-
-Pointing your browser to `HOST_PORT` should redirect to Red Hat SSO for authentication. 
+Pointing your browser to `http://<SWARM_SERVICE>/greeting` should redirect to Red Hat SSO for authentication.
 You can login with `admin:admin` and Red Hat SSO redirects you the REst endpoint. If everything works well you should receive a JSON response:
-   
+
 ```
 {"id":2,"content":"Hello World"}   
 ```
-
-## Manually requesting a bearer token
-
-If the pod of the Secured Wildfly Swarm application is running like the Red Hat SSO Server,
-you can access it by requesting a bearer token upfront. The supplied shell scripts demonstrate this:
-
-
-```bash
-cd scripts
-. set_env_vars.sh 
-
-./token_req.sh 
-
-{"id":2,"content":"Hello World"}
-
-```
-
-
