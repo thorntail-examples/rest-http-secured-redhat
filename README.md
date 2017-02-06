@@ -100,7 +100,7 @@ In order to build and deploy this project, you must have an account on an OpenSh
 
 # Build and deploy the Application
 
-1. First, to deploy Red Hat SSO move to `sso` folder, and then use the Fabric8 Maven Plugin to deploy the SSO service:
+1. First, to deploy Red Hat SSO, move to `sso` folder and then use the Fabric8 Maven Plugin to deploy the SSO server:
 
     ```bash
     cd sso
@@ -115,7 +115,7 @@ In order to build and deploy this project, you must have an account on an OpenSh
     mvn fabric8:deploy -Popenshift
     ```
 
-3. Make yourself familiar with the routes to the Red Hat SSO server and the WildflySwarm server. We will refer to these two addresses as `<RED_HAT_SSO>` and `<SWARM_SERVICE>` respectively.
+3. Make yourself familiar with the routes to the Red Hat SSO server and the WildflySwarm service. We will refer to these two addresses as `<RED_HAT_SSO>` and `<SWARM_SERVICE>` respectively.
 
   You can do this using the OpenShift web console or using the command line:
 
@@ -148,7 +148,10 @@ you must change the `SSO_AUTH_SERVER_URL` env variable for the pods to the `<RED
 ## Browser based access
 
 Pointing your browser to `http://<SWARM_SERVICE>/greeting` should redirect to Red Hat SSO for authentication.
-You can login with `admin:admin` and Red Hat SSO redirects you the REst endpoint. If everything works well you should receive a JSON response:
+You can login with `admin:admin` and Red Hat SSO redirects you the REst endpoint. BUt it may the previous session for user `admin`
+is still active. In that case no authentication will be prompted again.
+
+If everything works well you should receive a JSON response:
 
 ```
 {"id":2,"content":"Hello World"}   
