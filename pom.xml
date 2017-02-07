@@ -29,7 +29,7 @@
     <packaging>pom</packaging>
 
     <name>parent</name>
-    <description>Secured Swarm - Rest &amp; Red Hat SSO</description>
+    <description>Secured WildFly Swarm - Rest &amp; Red Hat SSO</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -38,7 +38,7 @@
 
         <fabric8.version>2.2.176</fabric8.version>
         <fabric8.maven.plugin.version>3.1.92</fabric8.maven.plugin.version>
-        <version.wildfly.swarm>2017.1.1</version.wildfly.swarm>
+        <version.wildfly.swarm>2017.2.0</version.wildfly.swarm>
 
         <maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
         <maven-failsafe-plugin.version>2.19.1</maven-failsafe-plugin.version>
