@@ -21,13 +21,13 @@
   <parent>
     <groupId>org.obsidiantoaster.quickstart</groupId>
     <artifactId>secured-swarm-rest-parent</artifactId>
-    <version>1.0.0.Alpha2</version>
+    <version>1.0.0-SNAPSHOT</version>
     <relativePath>../</relativePath>
   </parent>
 
   <groupId>org.obsidiantoaster.quickstart</groupId>
   <artifactId>secured-swarm-rest</artifactId>
-  <version>1.0.0.Alpha2</version>
+  <version>1.0.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
   <name>secured-swarm-rest</name>
