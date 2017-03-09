@@ -1,4 +1,4 @@
-package org.obsidiantoaster.quickstart;
+package org.obsidiantoaster.quickstart.sso;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -14,9 +14,10 @@ import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.obsidiantoaster.quickstart.service.GreetingController;
+import org.obsidiantoaster.quickstart.sso.GreetingController;
 import org.wildfly.swarm.Swarm;
 import org.wildfly.swarm.arquillian.CreateSwarm;
+import org.wildfly.swarm.arquillian.DefaultDeployment;
 import org.wildfly.swarm.jaxrs.JAXRSArchive;
 import org.wildfly.swarm.jaxrs.JAXRSFraction;
 
@@ -24,26 +25,15 @@ import org.wildfly.swarm.jaxrs.JAXRSFraction;
  * @author Heiko Braun
  */
 @RunWith(Arquillian.class)
-public class JAXRSArquillianTest {
-
-    @Deployment(testable = false)
-    public static Archive createDeployment() throws Exception {
-        JAXRSArchive deployment = ShrinkWrap.create(JAXRSArchive.class, "rest-example.war");
-        deployment.addPackage(GreetingController.class.getPackage());
-        deployment.addAllDependencies();
-        return deployment;
-    }
-
-    @CreateSwarm
-    public static Swarm newContainer() throws Exception {
-        return new Swarm().fraction(new JAXRSFraction());
-    }
+@DefaultDeployment
+public class GreetingServiceTest {
 
     @Test
     @RunAsClient
     public void testResource() {
         Client client = ClientBuilder.newClient();
-        WebTarget target = client.target("http://localhost:8080").path("greeting");
+        WebTarget target = client.target("http://localhost:8080")
+                .path("greeting");
 
         Response response = target.request(MediaType.APPLICATION_JSON).get();
         Assert.assertEquals(200, response.getStatus());

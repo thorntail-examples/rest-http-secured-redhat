@@ -14,35 +14,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.obsidiantoaster.quickstart.service;
+package org.obsidiantoaster.quickstart.sso;
 
-import java.util.UUID;
+import java.util.concurrent.atomic.AtomicLong;
 
-public class Greeting {
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 
-    private final long id;
-    private final String content;
-    private final static String node = UUID.randomUUID().toString();
+@Path("/")
+public class GreetingController {
 
-    public Greeting() {
-        this.id = 0;
-        this.content = null;
-    }
+    private static final AtomicLong counter = new AtomicLong();
 
-    public Greeting(long id, String content) {
-        this.id = id;
-        this.content = content;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public String getNode() {
-        return node;
+    @GET
+    @Path("/greeting")
+    @Produces("application/json")
+    public Greeting greeting(@QueryParam(value="name") String name) {
+        String suffix = name != null ? name : "World";
+        return new Greeting(counter.incrementAndGet(), "Hello, " + suffix + "!");
     }
 }
