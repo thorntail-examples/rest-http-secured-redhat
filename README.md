@@ -100,14 +100,20 @@ In order to build and deploy this project, you must have an account on an OpenSh
 
 # Build and deploy the Application
 
-1. First, to deploy Red Hat SSO, move to `sso` folder and then use the Fabric8 Maven Plugin to deploy the SSO server:
+1. Build the top level project once
+
+  ```
+  mvn clean install
+  ```
+  
+2. To deploy Red Hat SSO, move to `sso` folder and then use the Fabric8 Maven Plugin to deploy the SSO server:
 
     ```bash
     cd sso
     mvn fabric8:deploy -Popenshift
     ```
 
-2. Next, the WildFly Swarm application should be packaged and deployed. This process will generate the uber jar file, the OpenShift resources
+3. Next, the WildFly Swarm application should be packaged and deployed. This process will generate the uber jar file, the OpenShift resources
    and deploy them within the namespace of the OpenShift Server
 
     ```
@@ -115,7 +121,7 @@ In order to build and deploy this project, you must have an account on an OpenSh
     mvn fabric8:deploy -Popenshift
     ```
 
-3. Make yourself familiar with the routes to the Red Hat SSO server and the WildflySwarm service. We will refer to these two addresses as `<RED_HAT_SSO>` and `<SWARM_SERVICE>` respectively.
+4. Make yourself familiar with the routes to the Red Hat SSO server and the WildflySwarm service. We will refer to these two addresses as `<RED_HAT_SSO>` and `<SWARM_SERVICE>` respectively.
 
   You can do this using the OpenShift web console or using the command line:
 
@@ -127,15 +133,15 @@ secure-sso           <RED_HAT_SSO>                     secure-sso           <all
 secured-swarm-rest   <SWARM_SERVICE>             secured-swarm-rest   8080      
   ```
 
-4. Until [CLOUD-1166](https://issues.jboss.org/browse/CLOUD-1166) is fixed, we need to fix the redirect-uri in RH-SSO admin console, to point to our app's route (`<SWARM_SERVICE>` above).
+5. Until [CLOUD-1166](https://issues.jboss.org/browse/CLOUD-1166) is fixed, we need to fix the redirect-uri in RH-SSO admin console, to point to our app's route (`<SWARM_SERVICE>` above).
 
-  To do that, acccess the Red Hat SSO Admin Console at `http://<RED_HAT_SSO>/auth`, login with `admin:admin` and update the `demoapp` settings to allow redirects from `http://<SWARM_SERVICE>/*`:
+  To do that, access the Red Hat SSO Admin Console at `http://<RED_HAT_SSO>/auth`, login with `admin:admin` and update the `demoapp` settings to allow redirects from `http://<SWARM_SERVICE>/*`:
 
   ```
   Clients > Demoapp > Settings > Valid Redirect URIs     
   ```
 
-5. To specify the Red Hat SSO URL to be used by the WildFly Swarm application for authentication,
+6. To specify the Red Hat SSO URL to be used by the WildFly Swarm application for authentication,
 you must change the `SSO_AUTH_SERVER_URL` env variable for the pods to the `<RED_HAT_SSO>` value identified before:
 
     ```

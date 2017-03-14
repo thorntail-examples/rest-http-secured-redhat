@@ -53,6 +53,7 @@ spec:
             - "/bin/bash"
             - "-c"
             - "/opt/eap/bin/readinessProbe.sh"
+          initialDelaySeconds: 180
         ports:
         - name: jolokia
           containerPort: 8778

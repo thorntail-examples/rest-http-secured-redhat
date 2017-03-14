@@ -20,14 +20,6 @@ spec:
           value: /deployments
         - name: SSO_AUTH_SERVER_URL
           value: ${SSO_AUTH_SERVER_URL}/auth
-        - name: SSO_REALM
-          value: ${SSO_REALM}
-        - name: SSO_REALM_PUBLIC_KEY
-          value: ${SSO_REALM_PUBLIC_KEY}
-        - name: SSO_CLIENT_ID
-          value: ${SSO_CLIENT_ID}
-        - name: SSO_SECRET
-          value: ${SSO_SECRET}
         - name: JAVA_OPTIONS
           value: -Dsso.auth.server.url=$(SSO_AUTH_SERVER_URL)
         name: secured-swarm-rest
