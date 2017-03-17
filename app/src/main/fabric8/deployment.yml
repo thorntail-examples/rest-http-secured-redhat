@@ -21,7 +21,7 @@ spec:
         - name: SSO_AUTH_SERVER_URL
           value: ${SSO_AUTH_SERVER_URL}/auth
         - name: JAVA_OPTIONS
-          value: -Dsso.auth.server.url=$(SSO_AUTH_SERVER_URL)
+          value: -Dsso.auth.server.url=${SSO_AUTH_SERVER_URL}
         name: secured-swarm-rest
         image: secured-swarm-rest:latest
         imagePullPolicy: IfNotPresent

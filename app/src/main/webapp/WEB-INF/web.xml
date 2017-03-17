@@ -4,7 +4,7 @@
       <url-pattern>/greeting</url-pattern>
     </web-resource-collection>
     <auth-constraint>
-      <role-name>admin</role-name>
+      <role-name>swarm-admin</role-name>
     </auth-constraint>
   </security-constraint>
 
@@ -13,6 +13,6 @@
   </login-config>
 
   <security-role>
-    <role-name>admin</role-name>
+    <role-name>swarm-admin</role-name>
   </security-role>
 </web-app>
