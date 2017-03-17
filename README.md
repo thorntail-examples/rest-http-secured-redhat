@@ -103,11 +103,12 @@ section and follow the instruction to obtain it.
   ```
 
 2. Next, the WildFly Swarm application should be packaged and deployed. This process will generate the uber jar file, the OpenShift resources
-   and deploy them within the namespace of the OpenShift Server
+   and deploy them within the namespace of the OpenShift Server. Make sure you pass in the SSO_AUTH_SERVER_URL you
+   obtained during the deployment of the RH SSO server.
 
     ```
     cd app
-    mvn fabric8:deploy -Popenshift
+    mvn fabric8:deploy -DSSO_AUTH_SERVER_URL=<SSO_AUTH_SERVER_URL from above...> -Popenshift
     ```
 # Access the Secured Endpoints
 
