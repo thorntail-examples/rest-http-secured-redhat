@@ -56,7 +56,7 @@ The `sso` module is a submodule link to the [redhat-sso](https://github.com/obsi
  that contains the OpenShift objects required to deploy the Red Hat SSO Server 7.0 as well as a Java command line client
  driver to access this secured endpoint.
 
-The goal of this project is to deploy the quickstart in an OpenShift environment (online, dedicated, ...).
+The goal of this project is to deploy the quickstart in an OpenShift environment (online, dedicated, minishift, ...).
 
 # Prerequisites
 
@@ -96,20 +96,15 @@ section and follow the instruction to obtain it.
 
 # Build and deploy the Application
 
-1. Build the top level project once
-
-  ```
-  mvn clean install
-  ```
-
-2. Next, the WildFly Swarm application should be packaged and deployed. This process will generate the uber jar file, the OpenShift resources
-   and deploy them within the namespace of the OpenShift Server. Make sure you pass in the SSO_AUTH_SERVER_URL you
-   obtained during the deployment of the RH SSO server.
+The WildFly Swarm application needs to be packaged and deployed. This process will generate the uber jar file, the OpenShift resources
+and deploy them within the namespace of the OpenShift Server. Make sure you pass in the SSO_AUTH_SERVER_URL you
+obtained during the deployment of the RH SSO server.
 
     ```
     cd app
-    mvn fabric8:deploy -DSSO_AUTH_SERVER_URL=<SSO_AUTH_SERVER_URL from above...> -Popenshift
+    mvn fabric8:deploy -DSSO_AUTH_SERVER_URL=<SSO_AUTH_SERVER_URL from above...> -Popenshift -DskipTests=true
     ```
 # Access the Secured Endpoints
 
-Return to the sso/README.adoc and continue at the "Access the Secured Endpoints" section.
+Return to the sso/README.adoc or view it online [here](https://github.com/obsidian-toaster-quickstarts/redhat-sso/blob/master/README.adoc)
+and continue at the "Access the Secured Endpoints" section.
