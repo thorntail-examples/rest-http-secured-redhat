@@ -108,3 +108,19 @@ obtained during the deployment of the RH SSO server.
 
 Return to the sso/README.adoc or view it online [here](https://github.com/obsidian-toaster-quickstarts/redhat-sso/blob/master/README.adoc)
 and continue at the "Access the Secured Endpoints" section.
+
+## Example output
+
+```bash
+[sso 729]$ java -jar target/sso-client.jar --app secured-swarm-rest
+Successful oc get routes: Yes
+Using auth server URL: https://secure-sso-sso.e8ca.engint.openshiftapps.com/auth
+Available application endpoint names: [secured-vertx-rest, secured-swarm-rest, secured-springboot-rest]
+
+Requesting greeting...
+{
+  "id" : 2,
+  "content" : "Hello, World!",
+  "node" : "bff929fe-9dbd-4d28-b966-c958d9c081a8"
+}
+```
