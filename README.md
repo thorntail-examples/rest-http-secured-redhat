@@ -68,27 +68,30 @@ Name | Description | Version
 [maven][2] | Apache Maven | 3.2.x
 [oc][3] | OpenShift Client | v3.3.x
 [git][4] | Git version management | 2.x
+[minishift][5] | Minishift tool to run OpenShift locally | 1.0.0-beta.5
+
 
 [1]: http://www.oracle.com/technetwork/java/javase/downloads/
 [2]: https://maven.apache.org/download.cgi?Preferred=ftp://mirror.reverse.net/pub/apache/
 [3]: https://docs.openshift.com/enterprise/3.2/cli_reference/get_started_cli.html
 [4]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+[5]: https://github.com/minishift/minishift#getting-started
 
 The first time you clone this secured-swarm-rest project, you need to initialize the sso submodule. You can do this by
 either:
-  1. using `git clone --recursive https://github.com/obsidian-toaster-quickstarts/secured_rest_swarm`
+  1. using `git clone --recursive https://github.com/wildfly-swarm-openshiftio-boosters/rest-secured`
 
 or
 
-  1. using `git clone https://github.com/obsidian-toaster-quickstarts/secured_rest_swarm`
+  1. using `git clone https://github.com/wildfly-swarm-openshiftio-boosters/rest-secured`
   1. `cd sso`
   1. `git submodule init`
   1. `git submodule update`
 
-# Setting up OpenShift and the RH SSO Server
+# Setting up Minishift and the RH SSO Server
 
 If you have not done so already, open up the sso/README.adoc or view it online [here](https://github.com/obsidian-toaster-quickstarts/redhat-sso/blob/master/README.adoc)
-and follow the OpenShift Online section to setup your OpenShift environment and deploy the RH SSO server.
+and follow the Minishift section to setup your local OpenShift environment and deploy the RH SSO server.
 
 Make note of the SSO_AUTH_SERVER_URL value you received after deploying the RH SSO server. If you missed that step, return
 to https://github.com/obsidian-toaster-quickstarts/redhat-sso/blob/master/README.adoc#determine-the-sso_auth_server_url-value
