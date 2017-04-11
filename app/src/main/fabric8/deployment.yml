@@ -22,8 +22,8 @@ spec:
           value: ${SSO_AUTH_SERVER_URL}
         - name: JAVA_OPTIONS
           value: -Dsso.auth.server.url=${SSO_AUTH_SERVER_URL}
-        name: secured-swarm-rest
-        image: secured-swarm-rest:latest
+        name: ${project.artifactId}
+        image: ${project.artifactId}:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
@@ -41,8 +41,8 @@ spec:
   - imageChangeParams:
       automatic: true
       containerNames:
-      - secured-swarm-rest
+      - ${project.artifactId}
       from:
         kind: ImageStreamTag
-        name: secured-swarm-rest:latest
+        name: ${project.artifactId}:latest
     type: ImageChange

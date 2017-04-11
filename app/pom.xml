@@ -19,19 +19,17 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.obsidiantoaster.quickstart</groupId>
-    <artifactId>secured-swarm-rest-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <groupId>io.openshift.booster</groupId>
+    <artifactId>wfswarm-rest-http-secured-parent</artifactId>
+    <version>1-SNAPSHOT</version>
     <relativePath>../</relativePath>
   </parent>
 
-  <groupId>org.obsidiantoaster.quickstart</groupId>
-  <artifactId>secured-swarm-rest</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <artifactId>wfswarm-rest-http-secured</artifactId>
   <packaging>war</packaging>
 
-  <name>secured-swarm-rest</name>
-  <description>Obsidian :: Quickstart :: Secured Wildfly Swarm - Rest</description>
+  <name>wfswarm-rest-http-secured</name>
+  <description>Secured Wildfly Swarm - Rest</description>
 
   <properties>
     <failOnMissingWebXml>false</failOnMissingWebXml>

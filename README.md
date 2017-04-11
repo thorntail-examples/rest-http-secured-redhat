@@ -115,10 +115,10 @@ and continue at the "Access the Secured Endpoints" section.
 ## Example output
 
 ```bash
-[sso 729]$ java -jar target/sso-client.jar --app secured-swarm-rest
+[sso 729]$ java -jar target/sso-client.jar --app wfswarm-rest-http-secured
 Successful oc get routes: Yes
 Using auth server URL: https://secure-sso-sso.e8ca.engint.openshiftapps.com/auth
-Available application endpoint names: [secured-vertx-rest, secured-swarm-rest, secured-springboot-rest]
+Available application endpoint names: [secured-vertx-rest, wfswarm-rest-http-secured, secured-springboot-rest]
 
 Requesting greeting...
 {
