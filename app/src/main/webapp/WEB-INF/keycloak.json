@@ -6,8 +6,5 @@
   "ssl-required": "external",
   "disable-trust-manager": true,
   "bearer-only": true,
-  "use-resource-role-mappings": true,
-  "credentials": {
-    "secret": "${sso.secret:1daa57a2-b60e-468b-a3ac-25bd2dc2eadc}"
-  }
+  "use-resource-role-mappings": true
 }
