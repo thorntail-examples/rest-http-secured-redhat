@@ -2,7 +2,7 @@
 To properly clone this repository, use the --recursive option to clone so that the sso submodule is checked out fully:
 
 ```
-[sstark@sstark ObsidianToaster]$ git clone --recursive https://github.com/wildfly-swarm-openshiftio-boosters/rest-secured
+[sstark@sstark ObsidianToaster]$ git clone --recursive https://github.com/wildfly-swarm-openshiftio-boosters/wfswarm-rest-http-secured
 Cloning into 'rest-secured'...
 remote: Counting objects: 535, done.
 remote: Compressing objects: 100% (3/3), done.
@@ -21,4 +21,4 @@ Submodule path 'sso': checked out 'cd9fbf0980a3930ca7da1f1814a040bf5b032e96'
 # Full Booster Experience Docs
 See the full booster experience docs online at:
 
-<http://appdev.openshift.io/mission-secured-wf-swarm.html>
+<http://appdev.openshift.io/docs/mission-secured-wf-swarm.html>
