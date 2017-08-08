@@ -29,17 +29,6 @@ spec:
         - containerPort: 8080
           name: http
           protocol: TCP
-        readinessProbe:
-          httpGet:
-            path: /health
-            port: 8080
-          initialDelaySeconds: 10
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: 8080
-          initialDelaySeconds: 60
-          periodSeconds: 30
         securityContext:
           privileged: false
   triggers:

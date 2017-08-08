@@ -13,7 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.obsidiantoaster.quickstart.sso;
+package io.openshift.booster;
 
 import java.util.concurrent.atomic.AtomicLong;
 

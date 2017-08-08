@@ -21,14 +21,13 @@
     <groupId>io.openshift.booster</groupId>
     <artifactId>wfswarm-rest-http-secured-parent</artifactId>
     <version>3-SNAPSHOT</version>
-    <relativePath>../</relativePath>
   </parent>
 
   <artifactId>wfswarm-rest-http-secured</artifactId>
   <packaging>war</packaging>
 
-  <name>wfswarm-rest-http-secured</name>
-  <description>Secured Wildfly Swarm - Rest</description>
+  <name>Secured HTTP Example</name>
+  <description>Secured WildFly Swarm - Rest &amp; Red Hat SSO</description>
 
   <properties>
     <failOnMissingWebXml>false</failOnMissingWebXml>
@@ -68,6 +67,7 @@
     <dependency>
       <groupId>org.jboss.arquillian.junit</groupId>
       <artifactId>arquillian-junit-container</artifactId>
+      <version>1.1.12.Final</version>
       <scope>test</scope>
     </dependency>
 
@@ -80,14 +80,21 @@
         <filtering>true</filtering>
       </resource>
     </resources>
-    <testResources>
-      <testResource>
-        <directory>src/test/resources</directory>
-        <filtering>true</filtering>
-      </testResource>
-    </testResources>
 
     <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <configuration>
+          <webResources>
+            <resource>
+              <directory>src/main/webapp</directory>
+              <filtering>true</filtering>
+            </resource>
+          </webResources>
+        </configuration>
+      </plugin>
+
       <plugin>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>wildfly-swarm-plugin</artifactId>
@@ -111,7 +118,6 @@
           <plugin>
             <groupId>io.fabric8</groupId>
             <artifactId>fabric8-maven-plugin</artifactId>
-            <version>${fabric8.maven.plugin.version}</version>
             <executions>
               <execution>
                 <goals>
@@ -125,12 +131,22 @@
                 <includes>
                   <include>wildfly-swarm</include>
                 </includes>
+                <excludes>
+                  <exclude>webapp</exclude>
+                </excludes>
               </generator>
+              <enricher>
+                <config>
+                  <wildfly-swarm-health-check>
+                    <path>/</path>
+                  </wildfly-swarm-health-check>
+                </config>
+              </enricher>
             </configuration>
           </plugin>
           <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-failsafe-plugin</artifactId>
-            <version>2.19.1</version>
             <executions>
               <execution>
                 <goals>
