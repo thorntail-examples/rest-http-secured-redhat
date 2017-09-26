@@ -32,7 +32,7 @@
   <description>Secured WildFly Swarm - Rest &amp; Red Hat SSO</description>
 
   <properties>
-    <version.wildfly.swarm>2017.8.1</version.wildfly.swarm>
+    <version.wildfly.swarm>2017.9.5</version.wildfly.swarm>
   </properties>
 
   <modules>
