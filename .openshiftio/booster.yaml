@@ -1,2 +1,7 @@
 name: WildFly Swarm - REST and RH SSO
 description: A simple HTTP application using Wildfly Swarm secured by RH SSO
+versions:
+  - id: community
+    name: 2017.9.5 (Community)
+  - id: redhat
+    name: 7.0.0.redhat-6 (RHOAR)
