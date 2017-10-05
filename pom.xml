@@ -25,7 +25,7 @@
 
   <groupId>io.openshift.booster</groupId>
   <artifactId>wfswarm-rest-http-secured-parent</artifactId>
-  <version>4-SNAPSHOT</version>
+  <version>5-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Secured HTTP Example - Parent</name>
