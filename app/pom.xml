@@ -32,6 +32,7 @@
   <properties>
     <failOnMissingWebXml>false</failOnMissingWebXml>
     <version.resteasy>3.0.19.Final</version.resteasy>
+    <version.override.jackson>2.7.7</version.override.jackson>
   </properties>
 
   <dependencies>
@@ -159,6 +160,91 @@
         </plugins>
       </build>
     </profile>
+
+    <profile>
+      <id>openshift-it</id>
+      <build>
+        <plugins>
+          <!--
+            - 1.
+            -
+            - For running the test, we need the Jackson dependencies in a higher version than what is brought in by Swarm.
+            - Unfortunately, Failsafe can't be configured do add specific artifacts to the test classpath, just files,
+            - so we need to download the dependencies manually. This is what this plugin execution does.
+            -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>prepare-jackson-dependencies-for-integration-test</id>
+                <phase>pre-integration-test</phase>
+                <goals>
+                  <goal>copy</goal>
+                </goals>
+                <configuration>
+                  <stripVersion>true</stripVersion>
+                  <artifactItems>
+                    <artifactItem>
+                      <groupId>com.fasterxml.jackson.core</groupId>
+                      <artifactId>jackson-core</artifactId>
+                      <version>${version.override.jackson}</version>
+                    </artifactItem>
+                    <artifactItem>
+                      <groupId>com.fasterxml.jackson.core</groupId>
+                      <artifactId>jackson-annotations</artifactId>
+                      <version>${version.override.jackson}</version>
+                    </artifactItem>
+                    <artifactItem>
+                      <groupId>com.fasterxml.jackson.core</groupId>
+                      <artifactId>jackson-databind</artifactId>
+                      <version>${version.override.jackson}</version>
+                    </artifactItem>
+                  </artifactItems>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-failsafe-plugin</artifactId>
+            <configuration>
+              <!--
+                - 2.
+                -
+                - These artifacts are added to the test classpath automatically because they are project dependencies.
+                - However, they are of too old versions, so we remove them here and add correct versions later.
+                -->
+              <classpathDependencyExcludes>
+                <classpathDependencyExclude>com.fasterxml.jackson.core:jackson-core</classpathDependencyExclude>
+                <classpathDependencyExclude>com.fasterxml.jackson.core:jackson-annotations</classpathDependencyExclude>
+                <classpathDependencyExclude>com.fasterxml.jackson.core:jackson-databind</classpathDependencyExclude>
+              </classpathDependencyExcludes>
+              <!--
+                - 3.
+                -
+                - And here, we add the correct versions of the artifacts to test classpath. Unfortunately,
+                - this is only possible by file paths, not by artifact coordinates.
+                -->
+              <additionalClasspathElements>
+                <additionalClasspathElement>${project.build.directory}/dependency/jackson-core.jar</additionalClasspathElement>
+                <additionalClasspathElement>${project.build.directory}/dependency/jackson-annotations.jar</additionalClasspathElement>
+                <additionalClasspathElement>${project.build.directory}/dependency/jackson-databind.jar</additionalClasspathElement>
+              </additionalClasspathElements>
+            </configuration>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>integration-test</goal>
+                  <goal>verify</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
   </profiles>
 
 </project>
