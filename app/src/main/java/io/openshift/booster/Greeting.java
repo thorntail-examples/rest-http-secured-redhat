@@ -21,7 +21,6 @@ public class Greeting {
 
     private final long id;
     private final String content;
-    private final static String node = UUID.randomUUID().toString();
 
     public Greeting() {
         this.id = 0;
@@ -39,9 +38,5 @@ public class Greeting {
 
     public String getContent() {
         return content;
-    }
-
-    public String getNode() {
-        return node;
     }
 }
