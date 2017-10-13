@@ -13,26 +13,21 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
+
 package io.openshift.booster;
 
-import java.util.concurrent.atomic.AtomicLong;
-
-import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 
-@Path("/")
-public class GreetingController {
-
-    private static final AtomicLong counter = new AtomicLong();
-
+/**
+ * The REST interface representation for the greeting endpoints
+ */
+public interface IGreeting {
     @GET
-    @Path("/greeting")
+    @Path("/api/greeting")
     @Produces("application/json")
-    public Greeting greeting(@QueryParam(value="name") String name) {
-        String suffix = name != null ? name : "World";
-        return new Greeting(counter.incrementAndGet(), "Hello, " + suffix + "!");
-    }
+    public Greeting greeting(@QueryParam("name") String name);
 }
+

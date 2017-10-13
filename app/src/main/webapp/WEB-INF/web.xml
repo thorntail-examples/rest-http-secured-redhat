@@ -17,10 +17,10 @@
 <web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5">
   <security-constraint>
     <web-resource-collection>
-      <url-pattern>/greeting</url-pattern>
+      <url-pattern>/api/greeting</url-pattern>
     </web-resource-collection>
     <auth-constraint>
-      <role-name>swarm-admin</role-name>
+      <role-name>booster-admin</role-name>
     </auth-constraint>
   </security-constraint>
 
@@ -29,6 +29,6 @@
   </login-config>
 
   <security-role>
-    <role-name>swarm-admin</role-name>
+    <role-name>booster-admin</role-name>
   </security-role>
 </web-app>
