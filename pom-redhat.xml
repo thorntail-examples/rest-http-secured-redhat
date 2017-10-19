@@ -63,4 +63,19 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+
+   <build>
+      <plugins>
+         <plugin>
+           <groupId>org.apache.maven.plugins</groupId>
+           <artifactId>maven-surefire-plugin</artifactId>
+           <configuration>
+             <systemPropertyVariables>
+               <swarm.build.repos>https://maven.repository.redhat.com/ga/,https://maven.repository.redhat.com/earlyaccess/all/</swarm.build.repos>
+             </systemPropertyVariables>
+           </configuration>
+         </plugin>
+     </plugins>
+   </build>
+
 </project>
