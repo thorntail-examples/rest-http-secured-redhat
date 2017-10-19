@@ -19,7 +19,7 @@
 
   <artifactId>wfswarm-rest-http-secured</artifactId>
   <groupId>io.openshift.booster</groupId>
-  <version>5-SNAPSHOT</version>
+  <version>7.0.0-redhat-1-SNAPSHOT</version>
 
   <parent>
     <groupId>io.openshift</groupId>
@@ -37,7 +37,7 @@
     <version.arquillian.cube>1.9.1</version.arquillian.cube>
     <version.resteasy>3.0.19.Final</version.resteasy>
     <version.override.jackson>2.7.7</version.override.jackson>
-    <version.wildfly.swarm>2017.10.0</version.wildfly.swarm>
+    <version.wildfly.swarm>7.0.0.redhat-6</version.wildfly.swarm>
   </properties>
 
   <dependencyManagement>
@@ -45,6 +45,14 @@
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>bom</artifactId>
+        <version>${version.wildfly.swarm}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>org.wildfly.swarm</groupId>
+        <artifactId>bom-certified</artifactId>
         <version>${version.wildfly.swarm}</version>
         <type>pom</type>
         <scope>import</scope>
@@ -146,6 +154,17 @@
     </resources>
 
     <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <systemPropertyVariables>
+            <swarm.build.repos>https://maven.repository.redhat.com/ga/,https://maven.repository.redhat.com/earlyaccess/all/</swarm.build.repos>
+          </systemPropertyVariables>
+        </configuration>
+      </plugin>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
@@ -221,26 +240,26 @@
           </plugin>
 
           <plugin>
-           <groupId>org.apache.maven.plugins</groupId>
-           <artifactId>maven-enforcer-plugin</artifactId>
-           <executions>
-             <execution>
-               <id>enforce-property</id>
-               <goals>
-                 <goal>enforce</goal>
-               </goals>
-               <configuration>
-                 <rules>
-                   <requireProperty>
-                     <property>SSO_AUTH_SERVER_URL</property>
-                     <message>The property `SSO_AUTH_SERVER_URL` is missing!</message>
-                   </requireProperty>
-                 </rules>
-                 <fail>true</fail>
-               </configuration>
-             </execution>
-           </executions>
-         </plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-enforcer-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>enforce-property</id>
+                <goals>
+                  <goal>enforce</goal>
+                </goals>
+                <configuration>
+                  <rules>
+                    <requireProperty>
+                      <property>SSO_AUTH_SERVER_URL</property>
+                      <message>The property `SSO_AUTH_SERVER_URL` is missing!</message>
+                    </requireProperty>
+                  </rules>
+                  <fail>true</fail>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
 
         </plugins>
       </build>
@@ -328,26 +347,26 @@
           </plugin>
 
           <plugin>
-           <groupId>org.apache.maven.plugins</groupId>
-           <artifactId>maven-enforcer-plugin</artifactId>
-           <executions>
-             <execution>
-               <id>enforce-property</id>
-               <goals>
-                 <goal>enforce</goal>
-               </goals>
-               <configuration>
-                 <rules>
-                   <requireProperty>
-                     <property>SSO_AUTH_SERVER_URL</property>
-                     <message>The property `SSO_AUTH_SERVER_URL` is missing!</message>
-                   </requireProperty>
-                 </rules>
-                 <fail>true</fail>
-               </configuration>
-             </execution>
-           </executions>
-         </plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-enforcer-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>enforce-property</id>
+                <goals>
+                  <goal>enforce</goal>
+                </goals>
+                <configuration>
+                  <rules>
+                    <requireProperty>
+                      <property>SSO_AUTH_SERVER_URL</property>
+                      <message>The property `SSO_AUTH_SERVER_URL` is missing!</message>
+                    </requireProperty>
+                  </rules>
+                  <fail>true</fail>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
         </plugins>
       </build>
     </profile>
