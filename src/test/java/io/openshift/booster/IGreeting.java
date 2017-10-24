@@ -28,6 +28,6 @@ public interface IGreeting {
     @GET
     @Path("/api/greeting")
     @Produces("application/json")
-    public Greeting greeting(@QueryParam("name") String name);
+    Greeting greeting(@QueryParam("name") String name);
 }
 

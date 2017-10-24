@@ -17,6 +17,7 @@
 package io.openshift.booster;
 
 import java.io.InputStream;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import javax.net.ssl.SSLContext;
@@ -26,17 +27,17 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.ClientRequestFilter;
 import javax.ws.rs.client.WebTarget;
 
-import com.jayway.restassured.response.Response;
-import io.fabric8.openshift.api.model.Route;
-import io.openshift.booster.test.OpenShiftTestAssistant;
+import com.jayway.restassured.RestAssured;
 import org.apache.http.client.HttpClient;
 import org.apache.http.conn.ssl.NoopHostnameVerifier;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.ssl.SSLContexts;
+import org.arquillian.cube.openshift.impl.enricher.RouteURL;
+import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
+import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.keycloak.authorization.client.AuthzClient;
 import org.keycloak.authorization.client.Configuration;
 import org.keycloak.authorization.client.util.HttpResponseException;
@@ -51,46 +52,39 @@ import static org.assertj.core.api.Assertions.fail;
 /**
  * @author Heiko Braun
  */
+@RunWith(Arquillian.class)
 public class OpenshiftIT {
-    private static final OpenShiftTestAssistant openshift = new OpenShiftTestAssistant();
+    @RouteURL("secure-sso")
+    private URL ssoUrlBase;
 
-    private static AuthzClient authzClient;
+    @RouteURL("wfswarm-rest-http-secured")
+    private URL appUrl;
 
-    private static String applicationUrl;
+    private AuthzClient authzClient;
 
-    @BeforeClass
-    public static void setup() throws Exception {
-        Route ssoServerRoute = requireRoute("secure-sso");
-        String ssoAuthUrl = "https://" + ssoServerRoute.getSpec().getHost() + "/auth";
-        authzClient = createAuthzClient(ssoAuthUrl);
+    @Before
+    public void setup() throws Exception {
+        // the injected @RouteURL always contains a port number, which means the URL is different from SSO_AUTH_SERVER_URL,
+        // and that causes failures during token validation
+        String ssoUrl = ssoUrlBase.toString().replace(":443", "") + "auth";
 
-        openshift.deployApplication();
+        authzClient = createAuthzClient(ssoUrl);
 
-        // wait until the pods & routes become available
-        openshift.awaitApplicationReadinessOrFail();
-
+        RestAssured.useRelaxedHTTPSValidation();
         await().atMost(5, TimeUnit.MINUTES).until(() -> {
             try {
-                Response response = get();
-                return response.getStatusCode() == 200;
+                return get(ssoUrl).getStatusCode() == 200
+                        && get(appUrl).getStatusCode() == 200;
             } catch (Exception e) {
                 return false;
             }
         });
-
-        Route applicationRoute = requireRoute("wfswarm-rest-http-secured");
-        applicationUrl = "http://" + applicationRoute.getSpec().getHost();
     }
 
-    @AfterClass
-    public static void teardown() throws Exception {
-        openshift.cleanup();
-    }
-
-    private static Greeting getGreeting(String token, String from) {
+    private Greeting getGreeting(String token, String from) {
         Client client = ClientBuilder.newClient();
         try {
-            WebTarget target = client.target(applicationUrl);
+            WebTarget target = client.target(appUrl.toString());
             target.register((ClientRequestFilter) requestContext -> {
                 requestContext.getHeaders().add("Authorization", "Bearer " + token);
             });
@@ -142,14 +136,6 @@ public class OpenshiftIT {
         } catch (HttpResponseException t) {
             assertThat(t.getStatusCode()).isEqualTo(401);
         }
-    }
-
-    private static Route requireRoute(String name) {
-        Route route = openshift.client().routes().inNamespace(openshift.project()).withName(name).get();
-        if (route == null) {
-            throw new IllegalStateException("Couldn't find route " + name);
-        }
-        return route;
     }
 
     /**
