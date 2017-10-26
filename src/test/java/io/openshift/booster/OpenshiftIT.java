@@ -70,11 +70,9 @@ public class OpenshiftIT {
 
         authzClient = createAuthzClient(ssoUrl);
 
-        RestAssured.useRelaxedHTTPSValidation();
         await().atMost(5, TimeUnit.MINUTES).until(() -> {
             try {
-                return get(ssoUrl).getStatusCode() == 200
-                        && get(appUrl).getStatusCode() == 200;
+                return get(appUrl).getStatusCode() == 200;
             } catch (Exception e) {
                 return false;
             }
