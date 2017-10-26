@@ -37,7 +37,7 @@
     <version.arquillian.cube>1.9.1</version.arquillian.cube>
     <version.resteasy>3.0.19.Final</version.resteasy>
     <version.override.jackson>2.7.7</version.override.jackson>
-    <version.wildfly.swarm>7.0.0.redhat-6</version.wildfly.swarm>
+    <version.wildfly.swarm>7.0.0.redhat-8</version.wildfly.swarm>
   </properties>
 
   <dependencyManagement>
@@ -97,6 +97,13 @@
       <artifactId>resteasy-client</artifactId>
       <version>${version.resteasy}</version>
       <scope>test</scope>
+    </dependency>
+
+    <dependency>
+       <groupId>commons-logging</groupId>
+       <artifactId>commons-logging</artifactId>
+       <version>1.1.1</version>
+       <scope>test</scope>
     </dependency>
 
     <dependency>
