@@ -57,7 +57,7 @@ public class OpenshiftIT {
     @RouteURL("secure-sso")
     private URL ssoUrlBase;
 
-    @RouteURL("wfswarm-rest-http-secured")
+    @RouteURL("${app.name}")
     private URL appUrl;
 
     private AuthzClient authzClient;
