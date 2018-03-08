@@ -19,7 +19,7 @@
 
   <artifactId>wfswarm-rest-http-secured</artifactId>
   <groupId>io.openshift.booster</groupId>
-  <version>7.0.0-redhat-5-SNAPSHOT</version>
+  <version>7.0.0-redhat-6-SNAPSHOT</version>
 
   <parent>
     <groupId>io.openshift</groupId>
