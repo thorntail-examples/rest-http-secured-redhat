@@ -19,12 +19,12 @@
 
   <artifactId>wfswarm-rest-http-secured</artifactId>
   <groupId>io.openshift.booster</groupId>
-  <version>7.0.0-redhat-6-SNAPSHOT</version>
+  <version>7.0.1-redhat-1-SNAPSHOT</version>
 
   <parent>
     <groupId>io.openshift</groupId>
     <artifactId>booster-parent</artifactId>
-    <version>10</version>
+    <version>20</version>
   </parent>
 
   <packaging>war</packaging>
@@ -33,11 +33,12 @@
   <description>Secured WildFly Swarm - Rest &amp; Red Hat SSO</description>
 
   <properties>
-    <failOnMissingWebXml>false</failOnMissingWebXml>
-    <version.arquillian.cube>1.9.2</version.arquillian.cube>
-    <version.resteasy>3.0.19.Final</version.resteasy>
+    <version.wildfly.swarm>7.0.1.redhat-20</version.wildfly.swarm>
+    <version.resteasy>3.0.24.Final</version.resteasy>
+    <version.restassured>3.0.7</version.restassured>
+    <version.awaitility>3.1.0</version.awaitility>
+    <version.assertj>3.8.0</version.assertj>
     <version.override.jackson>2.7.7</version.override.jackson>
-    <version.wildfly.swarm>7.0.0.redhat-8</version.wildfly.swarm>
   </properties>
 
   <dependencyManagement>
@@ -63,14 +64,6 @@
         <artifactId>keycloak-authz-client</artifactId>
         <version>2.5.5.Final</version>
         <scope>test</scope>
-      </dependency>
-
-      <dependency>
-        <groupId>org.arquillian.cube</groupId>
-        <artifactId>arquillian-cube-bom</artifactId>
-        <version>${version.arquillian.cube}</version>
-        <type>pom</type>
-        <scope>import</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -133,6 +126,27 @@
     </dependency>
 
     <dependency>
+      <groupId>io.rest-assured</groupId>
+      <artifactId>rest-assured</artifactId>
+      <version>${version.restassured}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.awaitility</groupId>
+      <artifactId>awaitility</artifactId>
+      <version>${version.awaitility}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>${version.assertj}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
       <groupId>org.arquillian.cube</groupId>
       <artifactId>arquillian-cube-openshift</artifactId>
       <scope>test</scope>
@@ -180,6 +194,7 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
         <configuration>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
           <webResources>
             <resource>
               <directory>src/main/webapp</directory>

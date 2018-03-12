@@ -17,8 +17,6 @@
 package io.openshift.booster;
 
 import java.io.InputStream;
-import java.net.URL;
-import java.util.concurrent.TimeUnit;
 
 import javax.net.ssl.SSLContext;
 import javax.ws.rs.ClientErrorException;
@@ -27,11 +25,11 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.ClientRequestFilter;
 import javax.ws.rs.client.WebTarget;
 
-import com.jayway.restassured.RestAssured;
 import org.apache.http.client.HttpClient;
 import org.apache.http.conn.ssl.NoopHostnameVerifier;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.ssl.SSLContexts;
+import org.arquillian.cube.openshift.impl.enricher.AwaitRoute;
 import org.arquillian.cube.openshift.impl.enricher.RouteURL;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
@@ -44,8 +42,6 @@ import org.keycloak.authorization.client.util.HttpResponseException;
 import org.keycloak.representations.AccessTokenResponse;
 import org.keycloak.util.JsonSerialization;
 
-import static com.jayway.awaitility.Awaitility.await;
-import static com.jayway.restassured.RestAssured.get;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 
@@ -54,35 +50,24 @@ import static org.assertj.core.api.Assertions.fail;
  */
 @RunWith(Arquillian.class)
 public class OpenshiftIT {
-    @RouteURL("secure-sso")
-    private URL ssoUrlBase;
+    @RouteURL(value = "secure-sso", path = "/auth")
+    private String ssoUrl;
 
     @RouteURL("${app.name}")
-    private URL appUrl;
+    @AwaitRoute
+    private String appUrl;
 
     private AuthzClient authzClient;
 
     @Before
     public void setup() throws Exception {
-        // the injected @RouteURL always contains a port number, which means the URL is different from SSO_AUTH_SERVER_URL,
-        // and that causes failures during token validation
-        String ssoUrl = ssoUrlBase.toString().replace(":443", "") + "auth";
-
         authzClient = createAuthzClient(ssoUrl);
-
-        await().atMost(5, TimeUnit.MINUTES).until(() -> {
-            try {
-                return get(appUrl).getStatusCode() == 200;
-            } catch (Exception e) {
-                return false;
-            }
-        });
     }
 
     private Greeting getGreeting(String token, String from) {
         Client client = ClientBuilder.newClient();
         try {
-            WebTarget target = client.target(appUrl.toString());
+            WebTarget target = client.target(appUrl);
             target.register((ClientRequestFilter) requestContext -> {
                 requestContext.getHeaders().add("Authorization", "Bearer " + token);
             });
