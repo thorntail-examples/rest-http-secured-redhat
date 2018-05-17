@@ -33,7 +33,7 @@
   <description>Secured WildFly Swarm - Rest &amp; Red Hat SSO</description>
 
   <properties>
-    <version.wildfly.swarm>7.1.0.redhat-57</version.wildfly.swarm>
+    <version.wildfly.swarm>7.1.0.redhat-77</version.wildfly.swarm>
     <version.resteasy>3.0.24.Final</version.resteasy>
     <version.restassured>3.0.7</version.restassured>
     <version.awaitility>3.1.0</version.awaitility>
