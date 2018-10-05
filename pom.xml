@@ -17,44 +17,44 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>wfswarm-rest-http-secured</artifactId>
+  <artifactId>thorntail-rest-http-secured</artifactId>
   <groupId>io.openshift.booster</groupId>
-  <version>7.1.0-redhat-2-SNAPSHOT</version>
+  <version>2.2.0-redhat-1-SNAPSHOT</version>
 
   <parent>
     <groupId>io.openshift</groupId>
     <artifactId>booster-parent</artifactId>
-    <version>20</version>
+    <version>23</version>
   </parent>
 
   <packaging>war</packaging>
 
   <name>Secured HTTP Example</name>
-  <description>Secured WildFly Swarm - Rest &amp; Red Hat SSO</description>
+  <description>Secured Thorntail - Rest &amp; Red Hat SSO</description>
 
   <properties>
-    <version.wildfly.swarm>7.1.0.redhat-77</version.wildfly.swarm>
     <version.resteasy>3.0.24.Final</version.resteasy>
+    <version.override.jackson>2.7.7</version.override.jackson>
+    <version.thorntail>2.2.0.Final-redhat-00018</version.thorntail>
     <version.restassured>3.0.7</version.restassured>
     <version.awaitility>3.1.0</version.awaitility>
-    <version.assertj>3.8.0</version.assertj>
-    <version.override.jackson>2.7.7</version.override.jackson>
+    <version.assertj>3.8.0</version.assertj> 
   </properties>
 
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>org.wildfly.swarm</groupId>
+        <groupId>io.thorntail</groupId>
         <artifactId>bom</artifactId>
-        <version>${version.wildfly.swarm}</version>
+        <version>${version.thorntail}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
 
       <dependency>
-        <groupId>org.wildfly.swarm</groupId>
+        <groupId>io.thorntail</groupId>
         <artifactId>bom-certified</artifactId>
-        <version>${version.wildfly.swarm}</version>
+        <version>${version.thorntail}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -65,23 +65,24 @@
         <version>2.5.5.Final</version>
         <scope>test</scope>
       </dependency>
+
     </dependencies>
   </dependencyManagement>
 
   <dependencies>
 
     <dependency>
-      <groupId>org.wildfly.swarm</groupId>
-      <artifactId>monitor</artifactId>
+      <groupId>io.thorntail</groupId>
+      <artifactId>microprofile-health</artifactId>
     </dependency>
 
     <dependency>
-      <groupId>org.wildfly.swarm</groupId>
+      <groupId>io.thorntail</groupId>
       <artifactId>jaxrs</artifactId>
     </dependency>
 
     <dependency>
-      <groupId>org.wildfly.swarm</groupId>
+      <groupId>io.thorntail</groupId>
       <artifactId>keycloak</artifactId>
     </dependency>
 
@@ -89,13 +90,6 @@
       <groupId>org.jboss.resteasy</groupId>
       <artifactId>resteasy-client</artifactId>
       <version>${version.resteasy}</version>
-      <scope>test</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>commons-logging</groupId>
-      <artifactId>commons-logging</artifactId>
-      <version>1.1.1</version>
       <scope>test</scope>
     </dependency>
 
@@ -113,15 +107,8 @@
     </dependency>
 
     <dependency>
-      <groupId>org.wildfly.swarm</groupId>
+      <groupId>io.thorntail</groupId>
       <artifactId>arquillian</artifactId>
-      <scope>test</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>org.jboss.arquillian.junit</groupId>
-      <artifactId>arquillian-junit-container</artifactId>
-      <version>1.1.12.Final</version>
       <scope>test</scope>
     </dependency>
 
@@ -129,21 +116,21 @@
       <groupId>io.rest-assured</groupId>
       <artifactId>rest-assured</artifactId>
       <version>${version.restassured}</version>
-      <scope>test</scope>
+      <scope>test</scope> 
     </dependency>
 
     <dependency>
-      <groupId>org.awaitility</groupId>
-      <artifactId>awaitility</artifactId>
-      <version>${version.awaitility}</version>
-      <scope>test</scope>
-    </dependency>
+       <groupId>org.awaitility</groupId>
+       <artifactId>awaitility</artifactId>
+       <version>${version.awaitility}</version>
+       <scope>test</scope>
+    </dependency> 
 
     <dependency>
-      <groupId>org.assertj</groupId>
-      <artifactId>assertj-core</artifactId>
-      <version>${version.assertj}</version>
-      <scope>test</scope>
+        <groupId>org.assertj</groupId>
+        <artifactId>assertj-core</artifactId>
+        <version>${version.assertj}</version>
+        <scope>test</scope>
     </dependency>
 
     <dependency>
@@ -175,7 +162,6 @@
     </resources>
 
     <plugins>
-
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
@@ -184,9 +170,6 @@
             <classpathDependencyExclude>org.arquillian.cube:arquillian-cube-openshift</classpathDependencyExclude>
             <classpathDependencyExclude>org.arquillian.cube:arquillian-cube-kubernetes</classpathDependencyExclude>
           </classpathDependencyExcludes>
-          <systemPropertyVariables>
-            <swarm.build.repos>https://maven.repository.redhat.com/ga/,https://maven.repository.redhat.com/earlyaccess/all/</swarm.build.repos>
-          </systemPropertyVariables>
         </configuration>
       </plugin>
 
@@ -194,7 +177,6 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
         <configuration>
-          <failOnMissingWebXml>false</failOnMissingWebXml>
           <webResources>
             <resource>
               <directory>src/main/webapp</directory>
@@ -205,9 +187,9 @@
       </plugin>
 
       <plugin>
-        <groupId>org.wildfly.swarm</groupId>
-        <artifactId>wildfly-swarm-plugin</artifactId>
-        <version>${version.wildfly.swarm}</version>
+        <groupId>io.thorntail</groupId>
+        <artifactId>thorntail-maven-plugin</artifactId>
+        <version>${version.thorntail}</version>
         <executions>
           <execution>
             <goals>
@@ -238,7 +220,7 @@
             <configuration>
               <generator>
                 <includes>
-                  <include>wildfly-swarm</include>
+                  <include>thorntail-v2</include>
                 </includes>
                 <excludes>
                   <exclude>webapp</exclude>
@@ -246,35 +228,35 @@
               </generator>
               <enricher>
                 <config>
-                  <wildfly-swarm-health-check>
+                  <thorntail-v2-health-check>
                     <path>/</path>
-                  </wildfly-swarm-health-check>
+                  </thorntail-v2-health-check>
                 </config>
               </enricher>
             </configuration>
           </plugin>
 
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-enforcer-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>enforce-property</id>
-                <goals>
-                  <goal>enforce</goal>
-                </goals>
-                <configuration>
-                  <rules>
-                    <requireProperty>
-                      <property>SSO_AUTH_SERVER_URL</property>
-                      <message>The property `SSO_AUTH_SERVER_URL` is missing!</message>
-                    </requireProperty>
-                  </rules>
-                  <fail>true</fail>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
+           <groupId>org.apache.maven.plugins</groupId>
+           <artifactId>maven-enforcer-plugin</artifactId>
+           <executions>
+             <execution>
+               <id>enforce-property</id>
+               <goals>
+                 <goal>enforce</goal>
+               </goals>
+               <configuration>
+                 <rules>
+                   <requireProperty>
+                     <property>SSO_AUTH_SERVER_URL</property>
+                     <message>The property `SSO_AUTH_SERVER_URL` is missing!</message>
+                   </requireProperty>
+                 </rules>
+                 <fail>true</fail>
+               </configuration>
+             </execution>
+           </executions>
+         </plugin>
 
         </plugins>
       </build>
@@ -284,72 +266,10 @@
       <id>openshift-it</id>
       <build>
         <plugins>
-          <!--
-            - 1.
-            -
-            - For running the test, we need the Jackson dependencies in a higher version than what is brought in by Swarm.
-            - Unfortunately, Failsafe can't be configured do add specific artifacts to the test classpath, just files,
-            - so we need to download the dependencies manually. This is what this plugin execution does.
-            -->
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-dependency-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>prepare-jackson-dependencies-for-integration-test</id>
-                <phase>pre-integration-test</phase>
-                <goals>
-                  <goal>copy</goal>
-                </goals>
-                <configuration>
-                  <stripVersion>true</stripVersion>
-                  <artifactItems>
-                    <artifactItem>
-                      <groupId>com.fasterxml.jackson.core</groupId>
-                      <artifactId>jackson-core</artifactId>
-                      <version>${version.override.jackson}</version>
-                    </artifactItem>
-                    <artifactItem>
-                      <groupId>com.fasterxml.jackson.core</groupId>
-                      <artifactId>jackson-annotations</artifactId>
-                      <version>${version.override.jackson}</version>
-                    </artifactItem>
-                    <artifactItem>
-                      <groupId>com.fasterxml.jackson.core</groupId>
-                      <artifactId>jackson-databind</artifactId>
-                      <version>${version.override.jackson}</version>
-                    </artifactItem>
-                  </artifactItems>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-failsafe-plugin</artifactId>
             <configuration>
-              <!--
-                - 2.
-                -
-                - These artifacts are added to the test classpath automatically because they are project dependencies.
-                - However, they are of too old versions, so we remove them here and add correct versions later.
-                -->
-              <classpathDependencyExcludes>
-                <classpathDependencyExclude>com.fasterxml.jackson.core:jackson-core</classpathDependencyExclude>
-                <classpathDependencyExclude>com.fasterxml.jackson.core:jackson-annotations</classpathDependencyExclude>
-                <classpathDependencyExclude>com.fasterxml.jackson.core:jackson-databind</classpathDependencyExclude>
-              </classpathDependencyExcludes>
-              <!--
-                - 3.
-                -
-                - And here, we add the correct versions of the artifacts to test classpath. Unfortunately,
-                - this is only possible by file paths, not by artifact coordinates.
-                -->
-              <additionalClasspathElements>
-                <additionalClasspathElement>${project.build.directory}/dependency/jackson-core.jar</additionalClasspathElement>
-                <additionalClasspathElement>${project.build.directory}/dependency/jackson-annotations.jar</additionalClasspathElement>
-                <additionalClasspathElement>${project.build.directory}/dependency/jackson-databind.jar</additionalClasspathElement>
-              </additionalClasspathElements>
               <systemPropertyVariables>
                 <app.name>${project.artifactId}</app.name>
               </systemPropertyVariables>
@@ -365,31 +285,29 @@
           </plugin>
 
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-enforcer-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>enforce-property</id>
-                <goals>
-                  <goal>enforce</goal>
-                </goals>
-                <configuration>
-                  <rules>
-                    <requireProperty>
-                      <property>SSO_AUTH_SERVER_URL</property>
-                      <message>The property `SSO_AUTH_SERVER_URL` is missing!</message>
-                    </requireProperty>
-                  </rules>
-                  <fail>true</fail>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
+           <groupId>org.apache.maven.plugins</groupId>
+           <artifactId>maven-enforcer-plugin</artifactId>
+           <executions>
+             <execution>
+               <id>enforce-property</id>
+               <goals>
+                 <goal>enforce</goal>
+               </goals>
+               <configuration>
+                 <rules>
+                   <requireProperty>
+                     <property>SSO_AUTH_SERVER_URL</property>
+                     <message>The property `SSO_AUTH_SERVER_URL` is missing!</message>
+                   </requireProperty>
+                 </rules>
+                 <fail>true</fail>
+               </configuration>
+             </execution>
+           </executions>
+         </plugin>
         </plugins>
       </build>
     </profile>
-
-
   </profiles>
 
 </project>

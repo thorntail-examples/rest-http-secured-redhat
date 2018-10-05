@@ -17,6 +17,8 @@
 package io.openshift.booster;
 
 import java.io.InputStream;
+import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 import javax.net.ssl.SSLContext;
 import javax.ws.rs.ClientErrorException;
@@ -25,6 +27,7 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.ClientRequestFilter;
 import javax.ws.rs.client.WebTarget;
 
+import io.restassured.RestAssured;
 import org.apache.http.client.HttpClient;
 import org.apache.http.conn.ssl.NoopHostnameVerifier;
 import org.apache.http.impl.client.HttpClients;
@@ -42,6 +45,7 @@ import org.keycloak.authorization.client.util.HttpResponseException;
 import org.keycloak.representations.AccessTokenResponse;
 import org.keycloak.util.JsonSerialization;
 
+import static io.restassured.RestAssured.get;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 
@@ -61,7 +65,9 @@ public class OpenshiftIT {
 
     @Before
     public void setup() throws Exception {
+        
         authzClient = createAuthzClient(ssoUrl);
+
     }
 
     private Greeting getGreeting(String token, String from) {
