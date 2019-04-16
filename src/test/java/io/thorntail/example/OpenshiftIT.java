@@ -13,21 +13,8 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
+package io.thorntail.example;
 
-package io.openshift.booster;
-
-import java.io.InputStream;
-import java.net.URL;
-import java.util.concurrent.TimeUnit;
-
-import javax.net.ssl.SSLContext;
-import javax.ws.rs.ClientErrorException;
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.ClientRequestFilter;
-import javax.ws.rs.client.WebTarget;
-
-import io.restassured.RestAssured;
 import org.apache.http.client.HttpClient;
 import org.apache.http.conn.ssl.NoopHostnameVerifier;
 import org.apache.http.impl.client.HttpClients;
@@ -45,13 +32,17 @@ import org.keycloak.authorization.client.util.HttpResponseException;
 import org.keycloak.representations.AccessTokenResponse;
 import org.keycloak.util.JsonSerialization;
 
-import static io.restassured.RestAssured.get;
+import javax.net.ssl.SSLContext;
+import javax.ws.rs.ClientErrorException;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.ClientRequestFilter;
+import javax.ws.rs.client.WebTarget;
+import java.io.InputStream;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 
-/**
- * @author Heiko Braun
- */
 @RunWith(Arquillian.class)
 public class OpenshiftIT {
     @RouteURL(value = "secure-sso", path = "/auth")
@@ -65,9 +56,7 @@ public class OpenshiftIT {
 
     @Before
     public void setup() throws Exception {
-        
         authzClient = createAuthzClient(ssoUrl);
-
     }
 
     private Greeting getGreeting(String token, String from) {
@@ -146,18 +135,14 @@ public class OpenshiftIT {
                 .build();
 
         System.setProperty("sso.auth.server.url", ssoAuthUrl);
-        Configuration baseline = JsonSerialization.readValue(
-                configStream,
-                Configuration.class,
-                true // system property replacement
-        );
+        Configuration baseline = JsonSerialization.readValue(configStream, Configuration.class, true);
 
         return AuthzClient.create(
                 new Configuration(
                         baseline.getAuthServerUrl(),
                         baseline.getRealm(),
-                        baseline.getClientId(),
-                        baseline.getClientCredentials(),
+                        baseline.getResource(),
+                        baseline.getCredentials(),
                         httpClient
                 )
         );
