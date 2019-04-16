@@ -13,21 +13,23 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
+package io.thorntail.example;
 
-package io.openshift.booster;
-
+import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+import java.util.concurrent.atomic.AtomicLong;
 
-/**
- * The REST interface representation for the greeting endpoints
- */
-public interface IGreeting {
+@Path("/")
+public class GreetingController {
+    private static final AtomicLong counter = new AtomicLong();
+
     @GET
-    @Path("/api/greeting")
+    @Path("/greeting")
     @Produces("application/json")
-    Greeting greeting(@QueryParam("name") String name);
+    public Greeting greeting(@QueryParam(value="name") @DefaultValue("World") String name) {
+        return new Greeting(counter.incrementAndGet(), "Hello, " + name + "!");
+    }
 }
-

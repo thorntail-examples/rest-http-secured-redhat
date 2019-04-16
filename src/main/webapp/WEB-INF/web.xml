@@ -20,7 +20,7 @@
       <url-pattern>/api/greeting</url-pattern>
     </web-resource-collection>
     <auth-constraint>
-      <role-name>booster-admin</role-name>
+      <role-name>example-admin</role-name>
     </auth-constraint>
   </security-constraint>
 
@@ -29,6 +29,6 @@
   </login-config>
 
   <security-role>
-    <role-name>booster-admin</role-name>
+    <role-name>example-admin</role-name>
   </security-role>
 </web-app>
