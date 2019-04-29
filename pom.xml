@@ -41,7 +41,7 @@
     <version.assertj>3.12.2</version.assertj>
     <version.awaitility>3.1.6</version.awaitility>
     <version.fabric8-maven-plugin>4.1.0</version.fabric8-maven-plugin>
-    <version.keycloak>4.8.3.Final</version.keycloak>
+    <version.keycloak>6.0.1</version.keycloak>
     <version.maven-enforcer-plugin>3.0.0-M2</version.maven-enforcer-plugin>
     <version.maven-surefire-plugin>2.22.1</version.maven-surefire-plugin>
     <version.maven-war-plugin>3.2.2</version.maven-war-plugin>
