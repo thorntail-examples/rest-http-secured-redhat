@@ -39,7 +39,7 @@
 
     <version.arquillian-cube>1.18.2</version.arquillian-cube>
     <version.assertj>3.13.2</version.assertj>
-    <version.awaitility>4.0.0</version.awaitility>
+    <version.awaitility>4.0.1</version.awaitility>
     <version.fabric8-maven-plugin>4.2.0</version.fabric8-maven-plugin>
     <version.keycloak>4.8.3.Final</version.keycloak>
     <version.maven-enforcer-plugin>3.0.0-M2</version.maven-enforcer-plugin>
