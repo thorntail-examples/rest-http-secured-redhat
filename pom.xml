@@ -19,7 +19,7 @@
 
   <groupId>io.thorntail.example</groupId>
   <artifactId>thorntail-rest-http-secured</artifactId>
-  <version>2.4.0-redhat-2-SNAPSHOT</version>
+  <version>2.5.0-redhat-1-SNAPSHOT</version>
   <packaging>war</packaging>
 
   <name>Thorntail - Secured HTTP API &amp; Red Hat SSO</name>
@@ -41,13 +41,13 @@
     <version.assertj>3.13.2</version.assertj>
     <version.awaitility>4.0.1</version.awaitility>
     <version.fabric8-maven-plugin>4.3.0</version.fabric8-maven-plugin>
-    <version.keycloak>4.8.3.Final</version.keycloak>
+    <version.keycloak>4.8.11.Final-redhat-00001</version.keycloak>
     <version.maven-enforcer-plugin>3.0.0-M2</version.maven-enforcer-plugin>
     <version.maven-surefire-plugin>2.22.2</version.maven-surefire-plugin>
     <version.maven-war-plugin>3.2.3</version.maven-war-plugin>
     <version.restassured>4.1.2</version.restassured>
-    <version.resteasy>3.6.2.Final</version.resteasy>
-    <version.thorntail>2.4.0.Final-redhat-00013</version.thorntail>
+    <version.resteasy>3.9.0.Final-redhat-00001</version.resteasy>
+    <version.thorntail>2.5.0.Final-redhat-00016</version.thorntail>
 
     <fabric8.generator.from>registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift:1.6</fabric8.generator.from>
   </properties>
