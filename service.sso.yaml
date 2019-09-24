@@ -44,7 +44,7 @@ items:
       targetPort: 8080
     selector:
       app: sso
-- apiVersion: v1
+- apiVersion: apps.openshift.io/v1
   kind: DeploymentConfig
   metadata:
     name: sso
@@ -150,7 +150,7 @@ items:
             secretName: "sso-app-secret"
     triggers:
     - type: ConfigChange
-- apiVersion: v1
+- apiVersion: route.openshift.io/v1
   kind: Route
   metadata:
     name: secure-sso
@@ -162,7 +162,7 @@ items:
       name: secure-sso
     tls:
       termination: passthrough
-- apiVersion: v1
+- apiVersion: route.openshift.io/v1
   kind: Route
   metadata:
     name: sso
