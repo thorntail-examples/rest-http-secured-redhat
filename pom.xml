@@ -19,7 +19,7 @@
 
   <groupId>io.thorntail.example</groupId>
   <artifactId>thorntail-rest-http-secured</artifactId>
-  <version>2.5.1-redhat-1-SNAPSHOT</version>
+  <version>2.5.1-redhat-1</version>
   <packaging>war</packaging>
 
   <name>Thorntail - Secured HTTP API &amp; Red Hat SSO</name>
