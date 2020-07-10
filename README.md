@@ -1,8 +1,34 @@
-# Documentation
+# Thorntail REST HTTP Secured Example
 
-https://launcher.fabric8.io/docs/thorntail-runtime.html#mission-rest-http-secured-wf-swarm
+## Purpose
 
-# Integration test
+This example demonstrates how to secure a simple HTTP endpoint using Keycloak SSO.
+
+## Prerequisites
+
+* Log into an OpenShift cluster of your choice: `oc login ...`.
+* Select a project in which the services will be deployed: `oc project ...`.
+
+## Deployment
+
+Run the following commands to configure and deploy the applications.
+
+### Deployment using S2I
+
+Not supported.
+
+### Deployment with the Fabric8 Maven Plugin
+
+```bash
+oc apply -f service.sso.yaml
+
+mvn clean fabric8:deploy -Popenshift
+```
+
+## Test everything
+
+This is completely self-contained and doesn't require the application to be deployed in advance.
+Note that this may delete anything and everything in the OpenShift project.
 
 ```bash
 oc apply -f service.sso.yaml
