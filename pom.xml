@@ -44,7 +44,7 @@
     <version.keycloak>4.8.18.Final-redhat-00001</version.keycloak>
     <version.maven-enforcer-plugin>3.0.0-M3</version.maven-enforcer-plugin>
     <version.maven-surefire-plugin>2.22.2</version.maven-surefire-plugin>
-    <version.maven-war-plugin>3.3.0</version.maven-war-plugin>
+    <version.maven-war-plugin>3.3.1</version.maven-war-plugin>
     <version.restassured>4.3.1</version.restassured>
     <version.resteasy>3.9.3.SP1-redhat-00001</version.resteasy>
     <version.thorntail>2.5.1.Final-redhat-00010</version.thorntail>
