@@ -37,7 +37,7 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
-            <version>2.10.4.redhat-00001</version>
+            <version>2.10.4.redhat-00002</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -48,7 +48,7 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
-            <version>2.10.4.redhat-00001</version>
+            <version>2.10.4.redhat-00002</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -59,7 +59,7 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.10.4.redhat-00001</version>
+            <version>2.10.4.redhat-00002</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -81,7 +81,7 @@
         <dependency>
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-jdk8</artifactId>
-            <version>2.10.4.redhat-00001</version>
+            <version>2.10.4.redhat-00002</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -92,7 +92,7 @@
         <dependency>
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-jsr310</artifactId>
-            <version>2.10.4.redhat-00001</version>
+            <version>2.10.4.redhat-00002</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -103,7 +103,7 @@
         <dependency>
             <groupId>com.fasterxml.jackson.jaxrs</groupId>
             <artifactId>jackson-jaxrs-base</artifactId>
-            <version>2.10.4.redhat-00001</version>
+            <version>2.10.4.redhat-00002</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -114,7 +114,7 @@
         <dependency>
             <groupId>com.fasterxml.jackson.jaxrs</groupId>
             <artifactId>jackson-jaxrs-json-provider</artifactId>
-            <version>2.10.4.redhat-00001</version>
+            <version>2.10.4.redhat-00002</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -125,7 +125,7 @@
         <dependency>
             <groupId>com.fasterxml.jackson.module</groupId>
             <artifactId>jackson-module-jaxb-annotations</artifactId>
-            <version>2.10.4.redhat-00001</version>
+            <version>2.10.4.redhat-00002</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -172,12 +172,16 @@
         </dependency>
         <dependency>
             <groupId>com.github.fge</groupId>
-            <artifactId>jackson-coreutils</artifactId>
-            <version>1.0.0.redhat-1</version>
+            <artifactId>btf</artifactId>
+            <version>1.2.0.redhat-00007</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v3.0 or later</name>
                     <url>https://spdx.org/licenses/LGPL-3.0+.html</url>
+                </license>
+                <license>
+                    <name>Apache License 2.0</name>
+                    <url>http://www.apache.org/licenses/LICENSE-2.0</url>
                 </license>
             </licenses>
         </dependency>
@@ -189,6 +193,21 @@
                 <license>
                     <name>GNU Lesser General Public License, Version 3</name>
                     <url>http://www.gnu.org/licenses/lgpl-3.0-standalone.html</url>
+                </license>
+                <license>
+                    <name>Apache License 2.0</name>
+                    <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+                </license>
+            </licenses>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fge</groupId>
+            <artifactId>jackson-coreutils</artifactId>
+            <version>1.6.0.redhat-00006</version>
+            <licenses>
+                <license>
+                    <name>GNU Lesser General Public License v3.0 or later</name>
+                    <url>https://spdx.org/licenses/LGPL-3.0+.html</url>
                 </license>
                 <license>
                     <name>Apache License 2.0</name>
@@ -234,6 +253,21 @@
                 <license>
                     <name>GNU Lesser General Public License, Version 3</name>
                     <url>http://www.gnu.org/licenses/lgpl-3.0-standalone.html</url>
+                </license>
+                <license>
+                    <name>Apache License 2.0</name>
+                    <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+                </license>
+            </licenses>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fge</groupId>
+            <artifactId>msg-simple</artifactId>
+            <version>1.1.0.redhat-00007</version>
+            <licenses>
+                <license>
+                    <name>GNU Lesser General Public License v3.0 or later</name>
+                    <url>https://spdx.org/licenses/LGPL-3.0+.html</url>
                 </license>
                 <license>
                     <name>Apache License 2.0</name>
@@ -519,7 +553,7 @@
         <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
-            <version>1.11.0.redhat-00001</version>
+            <version>1.13</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -530,7 +564,7 @@
         <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
-            <version>1.13</version>
+            <version>1.14.0.redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -662,7 +696,7 @@
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>json-path</artifactId>
-            <version>4.3.1</version>
+            <version>4.3.2</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -673,7 +707,7 @@
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
-            <version>4.3.1</version>
+            <version>4.3.2</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -684,7 +718,7 @@
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured-common</artifactId>
-            <version>4.3.1</version>
+            <version>4.3.2</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -695,7 +729,7 @@
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>xml-path</artifactId>
-            <version>4.3.1</version>
+            <version>4.3.2</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -805,7 +839,7 @@
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>bean-validation</artifactId>
-            <version>2.7.1.Final-redhat-00001</version>
+            <version>2.7.2.Final-redhat-00003</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -816,7 +850,7 @@
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>bootstrap</artifactId>
-            <version>2.7.1.Final-redhat-00001</version>
+            <version>2.7.2.Final-redhat-00003</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -827,7 +861,7 @@
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>cdi</artifactId>
-            <version>2.7.1.Final-redhat-00001</version>
+            <version>2.7.2.Final-redhat-00003</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -838,7 +872,7 @@
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>cdi-config</artifactId>
-            <version>2.7.1.Final-redhat-00001</version>
+            <version>2.7.2.Final-redhat-00003</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -849,7 +883,7 @@
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>config-api</artifactId>
-            <version>2.7.1.redhat-00001</version>
+            <version>2.7.2.redhat-00002</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -860,7 +894,7 @@
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>config-api-runtime</artifactId>
-            <version>2.7.1.redhat-00001</version>
+            <version>2.7.2.redhat-00002</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -871,7 +905,7 @@
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>container</artifactId>
-            <version>2.7.1.Final-redhat-00001</version>
+            <version>2.7.2.Final-redhat-00003</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -882,7 +916,7 @@
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>ee</artifactId>
-            <version>2.7.1.Final-redhat-00001</version>
+            <version>2.7.2.Final-redhat-00003</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -893,7 +927,7 @@
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>elytron</artifactId>
-            <version>2.7.1.Final-redhat-00001</version>
+            <version>2.7.2.Final-redhat-00003</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -904,7 +938,7 @@
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>fraction-metadata</artifactId>
-            <version>2.7.1.Final-redhat-00001</version>
+            <version>2.7.2.Final-redhat-00003</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -915,7 +949,7 @@
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>io</artifactId>
-            <version>2.7.1.Final-redhat-00001</version>
+            <version>2.7.2.Final-redhat-00003</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -926,7 +960,7 @@
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>jaxrs</artifactId>
-            <version>2.7.1.Final-redhat-00001</version>
+            <version>2.7.2.Final-redhat-00003</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -937,7 +971,7 @@
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>jaxrs-cdi</artifactId>
-            <version>2.7.1.Final-redhat-00001</version>
+            <version>2.7.2.Final-redhat-00003</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -948,7 +982,7 @@
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>keycloak</artifactId>
-            <version>2.7.1.Final-redhat-00001</version>
+            <version>2.7.2.Final-redhat-00003</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -959,7 +993,7 @@
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>keycloak-client-config-api</artifactId>
-            <version>2.7.1.redhat-00001</version>
+            <version>2.7.2.redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -970,7 +1004,7 @@
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>logging</artifactId>
-            <version>2.7.1.Final-redhat-00001</version>
+            <version>2.7.2.Final-redhat-00003</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -981,7 +1015,7 @@
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>management</artifactId>
-            <version>2.7.1.Final-redhat-00001</version>
+            <version>2.7.2.Final-redhat-00003</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -992,7 +1026,7 @@
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>meta-spi</artifactId>
-            <version>2.7.1.Final-redhat-00001</version>
+            <version>2.7.2.Final-redhat-00003</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -1003,7 +1037,7 @@
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>microprofile-config</artifactId>
-            <version>2.7.1.Final-redhat-00001</version>
+            <version>2.7.2.Final-redhat-00003</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -1014,7 +1048,7 @@
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>microprofile-config-wildfly-config-api</artifactId>
-            <version>2.7.1.redhat-00002</version>
+            <version>2.7.2.redhat-00003</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -1025,7 +1059,7 @@
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>microprofile-config-wildfly-extension</artifactId>
-            <version>2.7.1.redhat-00002</version>
+            <version>2.7.2.redhat-00003</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -1036,7 +1070,7 @@
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>microprofile-health</artifactId>
-            <version>2.7.1.Final-redhat-00001</version>
+            <version>2.7.2.Final-redhat-00003</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -1047,7 +1081,7 @@
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>msc</artifactId>
-            <version>2.7.1.Final-redhat-00001</version>
+            <version>2.7.2.Final-redhat-00003</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -1058,7 +1092,7 @@
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>naming</artifactId>
-            <version>2.7.1.Final-redhat-00001</version>
+            <version>2.7.2.Final-redhat-00003</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -1069,7 +1103,7 @@
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>request-controller</artifactId>
-            <version>2.7.1.Final-redhat-00001</version>
+            <version>2.7.2.Final-redhat-00003</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -1080,7 +1114,7 @@
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>security</artifactId>
-            <version>2.7.1.Final-redhat-00001</version>
+            <version>2.7.2.Final-redhat-00003</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -1091,7 +1125,7 @@
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>spi</artifactId>
-            <version>2.7.1.Final-redhat-00001</version>
+            <version>2.7.2.Final-redhat-00003</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -1113,7 +1147,7 @@
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>transactions</artifactId>
-            <version>2.7.1.Final-redhat-00001</version>
+            <version>2.7.2.Final-redhat-00003</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -1124,7 +1158,7 @@
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>undertow</artifactId>
-            <version>2.7.1.Final-redhat-00001</version>
+            <version>2.7.2.Final-redhat-00003</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -1146,7 +1180,7 @@
         <dependency>
             <groupId>io.undertow</groupId>
             <artifactId>undertow-core</artifactId>
-            <version>2.0.30.SP4-redhat-00001</version>
+            <version>2.0.32.SP1-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -1157,7 +1191,7 @@
         <dependency>
             <groupId>io.undertow</groupId>
             <artifactId>undertow-servlet</artifactId>
-            <version>2.0.30.SP4-redhat-00001</version>
+            <version>2.0.32.SP1-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -1168,7 +1202,7 @@
         <dependency>
             <groupId>io.undertow</groupId>
             <artifactId>undertow-websockets-jsr</artifactId>
-            <version>2.0.30.SP4-redhat-00001</version>
+            <version>2.0.32.SP1-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -1226,12 +1260,12 @@
             <version>1.1.6.redhat-00001</version>
             <licenses>
                 <license>
-                    <name>Eclipse Distribution License, Version 1.0</name>
-                    <url>http://repository.jboss.org/licenses/edl-1.0.txt</url>
-                </license>
-                <license>
                     <name>Eclipse Public License 2.0</name>
                     <url>http://www.eclipse.org/legal/epl-v20.html</url>
+                </license>
+                <license>
+                    <name>Eclipse Distribution License, Version 1.0</name>
+                    <url>http://repository.jboss.org/licenses/edl-1.0.txt</url>
                 </license>
                 <license>
                     <name>GNU General Public License, Version 2 with the Classpath Exception</name>
@@ -1378,7 +1412,7 @@
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-artemis-native</artifactId>
-            <version>1.0.0.00003-redhat-00001</version>
+            <version>1.0.2.redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -1389,7 +1423,7 @@
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>artemis-commons</artifactId>
-            <version>2.9.0.redhat-00010</version>
+            <version>2.9.0.redhat-00016</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -1400,7 +1434,7 @@
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>artemis-journal</artifactId>
-            <version>2.9.0.redhat-00010</version>
+            <version>2.9.0.redhat-00016</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -1422,7 +1456,7 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.4</version>
+            <version>3.11</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -1444,7 +1478,7 @@
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
-            <version>4.5.3</version>
+            <version>4.5.12.redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -1455,7 +1489,7 @@
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
-            <version>4.5.4.redhat-00001</version>
+            <version>4.5.3</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -1477,12 +1511,8 @@
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpcore</artifactId>
-            <version>4.4.5.redhat-00001</version>
+            <version>4.4.13.redhat-00001</version>
             <licenses>
-                <license>
-                    <name>Creative Commons Attribution 2.5</name>
-                    <url>http://creativecommons.org/licenses/by/2.5/legalcode</url>
-                </license>
                 <license>
                     <name>Apache License 2.0</name>
                     <url>http://www.apache.org/licenses/LICENSE-2.0</url>
@@ -1503,12 +1533,19 @@
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpcore-nio</artifactId>
-            <version>4.4.5.redhat-00001</version>
+            <version>4.4.13.redhat-00001</version>
             <licenses>
                 <license>
-                    <name>Creative Commons Attribution 2.5</name>
-                    <url>http://creativecommons.org/licenses/by/2.5/legalcode</url>
+                    <name>Apache License 2.0</name>
+                    <url>http://www.apache.org/licenses/LICENSE-2.0</url>
                 </license>
+            </licenses>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpmime</artifactId>
+            <version>4.5.12.redhat-00001</version>
+            <licenses>
                 <license>
                     <name>Apache License 2.0</name>
                     <url>http://www.apache.org/licenses/LICENSE-2.0</url>
@@ -1519,17 +1556,6 @@
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpmime</artifactId>
             <version>4.5.3</version>
-            <licenses>
-                <license>
-                    <name>Apache License 2.0</name>
-                    <url>http://www.apache.org/licenses/LICENSE-2.0</url>
-                </license>
-            </licenses>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpmime</artifactId>
-            <version>4.5.4.redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -1837,7 +1863,7 @@
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
-            <version>3.17.1</version>
+            <version>3.18.1</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -1859,7 +1885,7 @@
         <dependency>
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcmail-jdk15on</artifactId>
-            <version>1.60.0.redhat-00002</version>
+            <version>1.65.0.redhat-00001</version>
             <licenses>
                 <license>
                     <name>MIT License</name>
@@ -1870,7 +1896,7 @@
         <dependency>
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcpkix-jdk15on</artifactId>
-            <version>1.60.0.redhat-00002</version>
+            <version>1.65.0.redhat-00001</version>
             <licenses>
                 <license>
                     <name>MIT License</name>
@@ -1881,7 +1907,7 @@
         <dependency>
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcprov-jdk15on</artifactId>
-            <version>1.60.0.redhat-00002</version>
+            <version>1.65.0.redhat-00001</version>
             <licenses>
                 <license>
                     <name>MIT License</name>
@@ -1914,7 +1940,7 @@
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy</artifactId>
-            <version>3.0.3</version>
+            <version>3.0.6</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -1925,7 +1951,7 @@
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-json</artifactId>
-            <version>3.0.3</version>
+            <version>3.0.6</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -1936,7 +1962,7 @@
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-xml</artifactId>
-            <version>3.0.3</version>
+            <version>3.0.6</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -2229,12 +2255,12 @@
             <version>1.1.6.redhat-00001</version>
             <licenses>
                 <license>
-                    <name>Eclipse Public License 2.0</name>
-                    <url>http://www.eclipse.org/legal/epl-v20.html</url>
-                </license>
-                <license>
                     <name>Eclipse Distribution License, Version 1.0</name>
                     <url>http://repository.jboss.org/licenses/edl-1.0.txt</url>
+                </license>
+                <license>
+                    <name>Eclipse Public License 2.0</name>
+                    <url>http://www.eclipse.org/legal/epl-v20.html</url>
                 </license>
                 <license>
                     <name>GNU General Public License, Version 2 with the Classpath Exception</name>
@@ -2370,7 +2396,7 @@
         <dependency>
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator</artifactId>
-            <version>6.0.20.Final-redhat-00001</version>
+            <version>6.0.21.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -2381,7 +2407,7 @@
         <dependency>
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator-cdi</artifactId>
-            <version>6.0.20.Final-redhat-00001</version>
+            <version>6.0.21.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -2789,7 +2815,7 @@
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-bean-validation</artifactId>
-            <version>7.3.2.GA-redhat-00002</version>
+            <version>7.3.4.GA-redhat-00003</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -2800,7 +2826,7 @@
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-clustering-api</artifactId>
-            <version>7.3.2.GA-redhat-00002</version>
+            <version>7.3.4.GA-redhat-00003</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -2811,7 +2837,7 @@
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-clustering-common</artifactId>
-            <version>7.3.2.GA-redhat-00002</version>
+            <version>7.3.4.GA-redhat-00003</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -2822,7 +2848,7 @@
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-clustering-ee-cache</artifactId>
-            <version>7.3.2.GA-redhat-00002</version>
+            <version>7.3.4.GA-redhat-00003</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -2833,7 +2859,7 @@
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-clustering-ee-infinispan</artifactId>
-            <version>7.3.2.GA-redhat-00002</version>
+            <version>7.3.4.GA-redhat-00003</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -2844,7 +2870,7 @@
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-clustering-ee-spi</artifactId>
-            <version>7.3.2.GA-redhat-00002</version>
+            <version>7.3.4.GA-redhat-00003</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -2855,7 +2881,7 @@
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-clustering-infinispan-spi</artifactId>
-            <version>7.3.2.GA-redhat-00002</version>
+            <version>7.3.4.GA-redhat-00003</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -2866,7 +2892,7 @@
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-clustering-marshalling-api</artifactId>
-            <version>7.3.2.GA-redhat-00002</version>
+            <version>7.3.4.GA-redhat-00003</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -2877,7 +2903,7 @@
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-clustering-marshalling-jboss</artifactId>
-            <version>7.3.2.GA-redhat-00002</version>
+            <version>7.3.4.GA-redhat-00003</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -2888,7 +2914,7 @@
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-clustering-marshalling-spi</artifactId>
-            <version>7.3.2.GA-redhat-00002</version>
+            <version>7.3.4.GA-redhat-00003</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -2899,7 +2925,7 @@
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-clustering-service</artifactId>
-            <version>7.3.2.GA-redhat-00002</version>
+            <version>7.3.4.GA-redhat-00003</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -2910,7 +2936,7 @@
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-clustering-singleton-api</artifactId>
-            <version>7.3.2.GA-redhat-00002</version>
+            <version>7.3.4.GA-redhat-00003</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -2921,7 +2947,7 @@
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-clustering-spi</artifactId>
-            <version>7.3.2.GA-redhat-00002</version>
+            <version>7.3.4.GA-redhat-00003</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -2932,7 +2958,7 @@
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-clustering-web-api</artifactId>
-            <version>7.3.2.GA-redhat-00002</version>
+            <version>7.3.4.GA-redhat-00003</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -2943,7 +2969,7 @@
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-clustering-web-cache</artifactId>
-            <version>7.3.2.GA-redhat-00002</version>
+            <version>7.3.4.GA-redhat-00003</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -2954,7 +2980,7 @@
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-clustering-web-container</artifactId>
-            <version>7.3.2.GA-redhat-00002</version>
+            <version>7.3.4.GA-redhat-00003</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -2965,7 +2991,7 @@
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-clustering-web-infinispan</artifactId>
-            <version>7.3.2.GA-redhat-00002</version>
+            <version>7.3.4.GA-redhat-00003</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -2976,7 +3002,7 @@
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-clustering-web-spi</artifactId>
-            <version>7.3.2.GA-redhat-00002</version>
+            <version>7.3.4.GA-redhat-00003</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -2987,7 +3013,7 @@
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-ee</artifactId>
-            <version>7.3.2.GA-redhat-00002</version>
+            <version>7.3.4.GA-redhat-00003</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -2998,7 +3024,7 @@
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-jaxrs</artifactId>
-            <version>7.3.2.GA-redhat-00002</version>
+            <version>7.3.4.GA-redhat-00003</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -3009,7 +3035,7 @@
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-naming</artifactId>
-            <version>7.3.2.GA-redhat-00002</version>
+            <version>7.3.4.GA-redhat-00003</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -3020,7 +3046,29 @@
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-security</artifactId>
-            <version>7.3.2.GA-redhat-00002</version>
+            <version>7.3.4.GA-redhat-00003</version>
+            <licenses>
+                <license>
+                    <name>GNU Lesser General Public License v2.1 or later</name>
+                    <url>http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html</url>
+                </license>
+            </licenses>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.eap</groupId>
+            <artifactId>wildfly-security-integration</artifactId>
+            <version>7.3.4.GA-redhat-00003</version>
+            <licenses>
+                <license>
+                    <name>GNU Lesser General Public License v2.1 or later</name>
+                    <url>http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html</url>
+                </license>
+            </licenses>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.eap</groupId>
+            <artifactId>wildfly-security-plugins</artifactId>
+            <version>7.3.4.GA-redhat-00003</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -3031,7 +3079,7 @@
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-transactions</artifactId>
-            <version>7.3.2.GA-redhat-00002</version>
+            <version>7.3.4.GA-redhat-00003</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -3042,7 +3090,7 @@
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-undertow</artifactId>
-            <version>7.3.2.GA-redhat-00002</version>
+            <version>7.3.4.GA-redhat-00003</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -3053,7 +3101,7 @@
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-web-common</artifactId>
-            <version>7.3.2.GA-redhat-00002</version>
+            <version>7.3.4.GA-redhat-00003</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -3064,7 +3112,7 @@
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-weld</artifactId>
-            <version>7.3.2.GA-redhat-00002</version>
+            <version>7.3.4.GA-redhat-00003</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -3075,7 +3123,7 @@
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-weld-bean-validation</artifactId>
-            <version>7.3.2.GA-redhat-00002</version>
+            <version>7.3.4.GA-redhat-00003</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -3086,7 +3134,7 @@
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-weld-common</artifactId>
-            <version>7.3.2.GA-redhat-00002</version>
+            <version>7.3.4.GA-redhat-00003</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -3097,7 +3145,7 @@
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-weld-spi</artifactId>
-            <version>7.3.2.GA-redhat-00002</version>
+            <version>7.3.4.GA-redhat-00003</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -3108,7 +3156,7 @@
         <dependency>
             <groupId>org.jboss.eap</groupId>
             <artifactId>wildfly-weld-transactions</artifactId>
-            <version>7.3.2.GA-redhat-00002</version>
+            <version>7.3.4.GA-redhat-00003</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -3130,7 +3178,7 @@
         <dependency>
             <groupId>org.jboss.invocation</groupId>
             <artifactId>jboss-invocation</artifactId>
-            <version>1.5.2.Final-redhat-00001</version>
+            <version>1.5.3.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -3185,7 +3233,7 @@
         <dependency>
             <groupId>org.jboss.logmanager</groupId>
             <artifactId>jboss-logmanager</artifactId>
-            <version>2.1.15.Final-redhat-00001</version>
+            <version>2.1.17.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -3207,7 +3255,7 @@
         <dependency>
             <groupId>org.jboss.marshalling</groupId>
             <artifactId>jboss-marshalling</artifactId>
-            <version>2.0.9.Final</version>
+            <version>2.0.10.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -3218,7 +3266,7 @@
         <dependency>
             <groupId>org.jboss.marshalling</groupId>
             <artifactId>jboss-marshalling</artifactId>
-            <version>2.0.9.Final-redhat-00001</version>
+            <version>2.0.9.Final</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -3229,7 +3277,7 @@
         <dependency>
             <groupId>org.jboss.marshalling</groupId>
             <artifactId>jboss-marshalling-river</artifactId>
-            <version>2.0.9.Final-redhat-00001</version>
+            <version>2.0.10.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -3299,7 +3347,7 @@
         <dependency>
             <groupId>org.jboss.narayana.jts</groupId>
             <artifactId>narayana-jts-idlj</artifactId>
-            <version>5.9.8.Final-redhat-00002</version>
+            <version>5.9.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 only</name>
@@ -3310,7 +3358,7 @@
         <dependency>
             <groupId>org.jboss.narayana.jts</groupId>
             <artifactId>narayana-jts-integration</artifactId>
-            <version>5.9.8.Final-redhat-00002</version>
+            <version>5.9.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 only</name>
@@ -3343,7 +3391,7 @@
         <dependency>
             <groupId>org.jboss.remoting</groupId>
             <artifactId>jboss-remoting</artifactId>
-            <version>5.0.18.Final-redhat-00001</version>
+            <version>5.0.19.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -4112,7 +4160,7 @@
         <dependency>
             <groupId>org.jboss.xnio</groupId>
             <artifactId>xnio-api</artifactId>
-            <version>3.7.3.Final</version>
+            <version>3.7.11.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -4123,17 +4171,6 @@
         <dependency>
             <groupId>org.jboss.xnio</groupId>
             <artifactId>xnio-api</artifactId>
-            <version>3.7.8.SP1-redhat-00001</version>
-            <licenses>
-                <license>
-                    <name>Apache License 2.0</name>
-                    <url>http://www.apache.org/licenses/LICENSE-2.0</url>
-                </license>
-            </licenses>
-        </dependency>
-        <dependency>
-            <groupId>org.jboss.xnio</groupId>
-            <artifactId>xnio-nio</artifactId>
             <version>3.7.3.Final</version>
             <licenses>
                 <license>
@@ -4145,7 +4182,18 @@
         <dependency>
             <groupId>org.jboss.xnio</groupId>
             <artifactId>xnio-nio</artifactId>
-            <version>3.7.8.SP1-redhat-00001</version>
+            <version>3.7.11.Final-redhat-00001</version>
+            <licenses>
+                <license>
+                    <name>Apache License 2.0</name>
+                    <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+                </license>
+            </licenses>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.xnio</groupId>
+            <artifactId>xnio-nio</artifactId>
+            <version>3.7.3.Final</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -4193,7 +4241,7 @@
         <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-adapter-core</artifactId>
-            <version>9.0.5.redhat-00001</version>
+            <version>9.0.10.redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -4204,7 +4252,7 @@
         <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-adapter-spi</artifactId>
-            <version>9.0.5.redhat-00001</version>
+            <version>9.0.10.redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -4215,7 +4263,7 @@
         <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-authz-client</artifactId>
-            <version>9.0.5.redhat-00001</version>
+            <version>9.0.10.redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -4226,7 +4274,7 @@
         <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-common</artifactId>
-            <version>9.0.5.redhat-00001</version>
+            <version>9.0.10.redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -4237,7 +4285,7 @@
         <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-core</artifactId>
-            <version>9.0.5.redhat-00001</version>
+            <version>9.0.10.redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -4248,7 +4296,7 @@
         <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-jboss-adapter-core</artifactId>
-            <version>9.0.5.redhat-00001</version>
+            <version>9.0.10.redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -4259,7 +4307,7 @@
         <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-undertow-adapter</artifactId>
-            <version>9.0.5.redhat-00001</version>
+            <version>9.0.10.redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -4270,7 +4318,7 @@
         <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-undertow-adapter-spi</artifactId>
-            <version>9.0.5.redhat-00001</version>
+            <version>9.0.10.redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -4281,7 +4329,7 @@
         <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-wildfly-adapter</artifactId>
-            <version>9.0.5.redhat-00001</version>
+            <version>9.0.10.redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -4292,7 +4340,7 @@
         <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-wildfly-elytron-oidc-adapter</artifactId>
-            <version>9.0.5.redhat-00001</version>
+            <version>9.0.10.redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -4303,7 +4351,7 @@
         <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-wildfly-subsystem</artifactId>
-            <version>9.0.5.redhat-00001</version>
+            <version>9.0.10.redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -4380,7 +4428,7 @@
         <dependency>
             <groupId>org.picketbox</groupId>
             <artifactId>picketbox</artifactId>
-            <version>5.0.3.Final-redhat-00006</version>
+            <version>5.0.3.Final-redhat-00007</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 only</name>
@@ -4402,7 +4450,7 @@
         <dependency>
             <groupId>org.picketbox</groupId>
             <artifactId>picketbox-infinispan</artifactId>
-            <version>5.0.3.Final-redhat-00006</version>
+            <version>5.0.3.Final-redhat-00007</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 only</name>
@@ -4592,7 +4640,7 @@
         <dependency>
             <groupId>org.wildfly.core</groupId>
             <artifactId>wildfly-controller</artifactId>
-            <version>10.1.11.Final-redhat-00001</version>
+            <version>10.1.15.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -4622,7 +4670,7 @@
         <dependency>
             <groupId>org.wildfly.core</groupId>
             <artifactId>wildfly-controller-client</artifactId>
-            <version>10.1.11.Final-redhat-00001</version>
+            <version>10.1.15.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -4652,7 +4700,7 @@
         <dependency>
             <groupId>org.wildfly.core</groupId>
             <artifactId>wildfly-core-management-client</artifactId>
-            <version>10.1.11.Final-redhat-00001</version>
+            <version>10.1.15.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -4682,7 +4730,7 @@
         <dependency>
             <groupId>org.wildfly.core</groupId>
             <artifactId>wildfly-core-security</artifactId>
-            <version>10.1.11.Final-redhat-00001</version>
+            <version>10.1.15.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -4712,7 +4760,7 @@
         <dependency>
             <groupId>org.wildfly.core</groupId>
             <artifactId>wildfly-core-security-api</artifactId>
-            <version>10.1.11.Final-redhat-00001</version>
+            <version>10.1.15.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -4742,7 +4790,7 @@
         <dependency>
             <groupId>org.wildfly.core</groupId>
             <artifactId>wildfly-deployment-repository</artifactId>
-            <version>10.1.11.Final-redhat-00001</version>
+            <version>10.1.15.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -4757,7 +4805,7 @@
         <dependency>
             <groupId>org.wildfly.core</groupId>
             <artifactId>wildfly-domain-http-error-context</artifactId>
-            <version>10.1.11.Final-redhat-00001</version>
+            <version>10.1.15.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -4787,7 +4835,7 @@
         <dependency>
             <groupId>org.wildfly.core</groupId>
             <artifactId>wildfly-domain-http-interface</artifactId>
-            <version>10.1.11.Final-redhat-00001</version>
+            <version>10.1.15.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -4817,7 +4865,7 @@
         <dependency>
             <groupId>org.wildfly.core</groupId>
             <artifactId>wildfly-domain-management</artifactId>
-            <version>10.1.11.Final-redhat-00001</version>
+            <version>10.1.15.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -4832,7 +4880,7 @@
         <dependency>
             <groupId>org.wildfly.core</groupId>
             <artifactId>wildfly-elytron-integration</artifactId>
-            <version>10.1.11.Final-redhat-00001</version>
+            <version>10.1.15.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -4862,7 +4910,7 @@
         <dependency>
             <groupId>org.wildfly.core</groupId>
             <artifactId>wildfly-io</artifactId>
-            <version>10.1.11.Final-redhat-00001</version>
+            <version>10.1.15.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -4877,7 +4925,7 @@
         <dependency>
             <groupId>org.wildfly.core</groupId>
             <artifactId>wildfly-logging</artifactId>
-            <version>10.1.11.Final-redhat-00001</version>
+            <version>10.1.15.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -4907,7 +4955,7 @@
         <dependency>
             <groupId>org.wildfly.core</groupId>
             <artifactId>wildfly-network</artifactId>
-            <version>10.1.11.Final-redhat-00001</version>
+            <version>10.1.15.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -4937,7 +4985,7 @@
         <dependency>
             <groupId>org.wildfly.core</groupId>
             <artifactId>wildfly-platform-mbean</artifactId>
-            <version>10.1.11.Final-redhat-00001</version>
+            <version>10.1.15.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -4967,7 +5015,7 @@
         <dependency>
             <groupId>org.wildfly.core</groupId>
             <artifactId>wildfly-process-controller</artifactId>
-            <version>10.1.11.Final-redhat-00001</version>
+            <version>10.1.15.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -4997,7 +5045,7 @@
         <dependency>
             <groupId>org.wildfly.core</groupId>
             <artifactId>wildfly-protocol</artifactId>
-            <version>10.1.11.Final-redhat-00001</version>
+            <version>10.1.15.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -5027,7 +5075,7 @@
         <dependency>
             <groupId>org.wildfly.core</groupId>
             <artifactId>wildfly-remoting</artifactId>
-            <version>10.1.11.Final-redhat-00001</version>
+            <version>10.1.15.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -5042,7 +5090,7 @@
         <dependency>
             <groupId>org.wildfly.core</groupId>
             <artifactId>wildfly-request-controller</artifactId>
-            <version>10.1.11.Final-redhat-00001</version>
+            <version>10.1.15.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -5072,7 +5120,7 @@
         <dependency>
             <groupId>org.wildfly.core</groupId>
             <artifactId>wildfly-server</artifactId>
-            <version>10.1.11.Final-redhat-00001</version>
+            <version>10.1.15.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -5102,7 +5150,7 @@
         <dependency>
             <groupId>org.wildfly.core</groupId>
             <artifactId>wildfly-version</artifactId>
-            <version>10.1.11.Final-redhat-00001</version>
+            <version>10.1.15.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>GNU Lesser General Public License v2.1 or later</name>
@@ -5116,8 +5164,8 @@
         </dependency>
         <dependency>
             <groupId>org.wildfly.openssl</groupId>
-            <artifactId>wildfly-openssl-java</artifactId>
-            <version>1.0.9.SP03-redhat-00001</version>
+            <artifactId>wildfly-openssl</artifactId>
+            <version>1.0.12.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5139,7 +5187,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-asn1</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5150,7 +5198,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-audit</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5161,7 +5209,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-auth</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5172,7 +5220,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-auth-server</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5183,7 +5231,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-auth-server-deprecated</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5194,7 +5242,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-auth-server-http</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5205,7 +5253,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-auth-server-sasl</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5216,7 +5264,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-auth-util</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5227,7 +5275,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-base</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5238,7 +5286,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-client</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5249,7 +5297,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-credential</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5260,7 +5308,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-credential-source-deprecated</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5271,7 +5319,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-credential-source-impl</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5282,7 +5330,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-credential-store</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5293,7 +5341,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-digest</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5304,7 +5352,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-http</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5315,7 +5363,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-http-basic</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5326,7 +5374,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-http-bearer</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5337,7 +5385,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-http-cert</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5348,7 +5396,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-http-deprecated</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5359,7 +5407,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-http-digest</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5370,7 +5418,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-http-form</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5381,7 +5429,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-http-spnego</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5392,7 +5440,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-http-sso</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5403,7 +5451,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-http-util</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5414,7 +5462,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-jacc</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5425,7 +5473,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-jaspi</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5436,7 +5484,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-json-util</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5447,7 +5495,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-keystore</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5458,7 +5506,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-mechanism</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5469,7 +5517,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-mechanism-digest</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5480,7 +5528,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-mechanism-gssapi</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5491,7 +5539,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-mechanism-http</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5502,7 +5550,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-mechanism-oauth2</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5513,7 +5561,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-mechanism-scram</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5524,7 +5572,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-password-impl</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5535,7 +5583,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-permission</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5546,7 +5594,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-provider-util</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5557,7 +5605,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-realm</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5568,7 +5616,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-realm-jdbc</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5579,7 +5627,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-realm-ldap</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5590,7 +5638,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-realm-token</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5601,7 +5649,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-sasl</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5612,7 +5660,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-sasl-anonymous</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5623,7 +5671,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-sasl-auth-util</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5634,7 +5682,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-sasl-deprecated</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5645,7 +5693,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-sasl-digest</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5656,7 +5704,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-sasl-entity</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5667,7 +5715,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-sasl-external</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5678,7 +5726,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-sasl-gs2</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5689,7 +5737,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-sasl-gssapi</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5700,7 +5748,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-sasl-localuser</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5711,7 +5759,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-sasl-oauth2</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5722,7 +5770,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-sasl-otp</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5733,7 +5781,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-sasl-plain</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5744,7 +5792,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-sasl-scram</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5755,7 +5803,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-security-manager</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5766,7 +5814,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-security-manager-action</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5777,7 +5825,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-ssl</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5788,7 +5836,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-util</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5799,7 +5847,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-x500</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5810,7 +5858,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-x500-cert</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5821,7 +5869,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-x500-cert-acme</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5832,7 +5880,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-x500-cert-util</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5843,7 +5891,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-x500-deprecated</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5854,7 +5902,7 @@
         <dependency>
             <groupId>org.wildfly.security</groupId>
             <artifactId>wildfly-elytron-x500-principal</artifactId>
-            <version>1.10.7.Final-redhat-00001</version>
+            <version>1.10.9.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5898,7 +5946,7 @@
         <dependency>
             <groupId>org.wildfly.transaction</groupId>
             <artifactId>wildfly-transaction-client</artifactId>
-            <version>1.1.11.Final-redhat-00001</version>
+            <version>1.1.13.Final-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
@@ -5975,7 +6023,7 @@
         <dependency>
             <groupId>xerces</groupId>
             <artifactId>xercesImpl</artifactId>
-            <version>2.12.0.SP02-redhat-00001</version>
+            <version>2.12.0.SP03-redhat-00001</version>
             <licenses>
                 <license>
                     <name>Apache License 2.0</name>
