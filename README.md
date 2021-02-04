@@ -17,12 +17,12 @@ Run the following commands to configure and deploy the applications.
 
 Not supported.
 
-### Deployment with the Fabric8 Maven Plugin
+### Deployment with the JKube OpenShift Maven Plugin
 
 ```bash
 oc apply -f service.sso.yaml
 
-mvn clean fabric8:deploy -Popenshift
+mvn clean oc:deploy -Popenshift -DSSO_AUTH_SERVER_URL=$(oc get route secure-sso -o jsonpath='https://{.spec.host}/auth')
 ```
 
 ## Test everything
@@ -33,7 +33,7 @@ Note that this may delete anything and everything in the OpenShift project.
 ```bash
 oc apply -f service.sso.yaml
 
-mvn clean verify -Popenshift,openshift-it -DSSO_AUTH_SERVER_URL=$(oc get route secure-sso -o jsonpath='{"https://"}{.spec.host}{"/auth\n"}')
+mvn clean verify -Popenshift,openshift-it -DSSO_AUTH_SERVER_URL=$(oc get route secure-sso -o jsonpath='https://{.spec.host}/auth')
 
 oc delete -f service.sso.yaml
 ```
