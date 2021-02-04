@@ -1,5 +1,5 @@
 {
-  "realm": "master",
+  "realm": "demo",
   "auth-server-url" : "${SSO_AUTH_SERVER_URL}",
   "no-check-certificate": true,
   "resource" : "demoapp",
