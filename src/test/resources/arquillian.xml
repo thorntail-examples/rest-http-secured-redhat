@@ -7,5 +7,6 @@
     <!-- when switching namespace.use.current to false, switch enableImageStreamDetection to true -->
     <property name="enableImageStreamDetection">false</property>
     <property name="env.init.enabled">true</property>
+    <property name="env.config.url">file://${basedir}/target/classes/META-INF/jkube/openshift.yml</property>
   </extension>
 </arquillian>
