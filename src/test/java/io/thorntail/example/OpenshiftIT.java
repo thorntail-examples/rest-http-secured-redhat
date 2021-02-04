@@ -15,17 +15,16 @@
  */
 package io.thorntail.example;
 
+import io.thorntail.openshift.test.OpenShiftTest;
+import io.thorntail.openshift.test.injection.TestResource;
+import io.thorntail.openshift.test.injection.WithName;
 import org.apache.http.client.HttpClient;
 import org.apache.http.conn.ssl.NoopHostnameVerifier;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.ssl.SSLContexts;
-import org.arquillian.cube.openshift.impl.enricher.AwaitRoute;
-import org.arquillian.cube.openshift.impl.enricher.RouteURL;
-import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.keycloak.authorization.client.AuthzClient;
 import org.keycloak.authorization.client.Configuration;
 import org.keycloak.authorization.client.util.HttpResponseException;
@@ -39,24 +38,26 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.ClientRequestFilter;
 import javax.ws.rs.client.WebTarget;
 import java.io.InputStream;
+import java.net.URI;
+import java.net.URL;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 
-@RunWith(Arquillian.class)
+@OpenShiftTest
 public class OpenshiftIT {
-    @RouteURL(value = "secure-sso", path = "/auth")
-    private String ssoUrl;
+    @TestResource
+    @WithName("secure-sso")
+    private URL ssoUrl;
 
-    @RouteURL("${app.name}")
-    @AwaitRoute
-    private String appUrl;
+    @TestResource
+    private URI appUrl;
 
     private AuthzClient authzClient;
 
-    @Before
+    @BeforeEach
     public void setup() throws Exception {
-        authzClient = createAuthzClient(ssoUrl);
+        authzClient = createAuthzClient(ssoUrl + "/auth");
     }
 
     private Greeting getGreeting(String token, String from) {
