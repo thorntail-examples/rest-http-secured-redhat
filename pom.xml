@@ -37,7 +37,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-    <version.jkube>1.2.0</version.jkube>
+    <version.jkube>1.3.0</version.jkube>
     <version.keycloak>9.0.11.redhat-00001</version.keycloak>
     <version.maven-enforcer-plugin>3.0.0-M3</version.maven-enforcer-plugin>
     <version.maven-surefire-plugin>2.22.2</version.maven-surefire-plugin>
